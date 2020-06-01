@@ -1,34 +1,3 @@
-# 
-# ******************************************************************************
-# *                                                                            *
-# *                   Copyright (C) 2004-2010, Nangate Inc.                    *
-# *                           All rights reserved.                             *
-# *                                                                            *
-# * Nangate and the Nangate logo are trademarks of Nangate Inc.                *
-# *                                                                            *
-# * All trademarks, logos, software marks, and trade names (collectively the   *
-# * "Marks") in this program are proprietary to Nangate or other respective    *
-# * owners that have granted Nangate the right and license to use such Marks.  *
-# * You are not permitted to use the Marks without the prior written consent   *
-# * of Nangate or such third party that may own the Marks.                     *
-# *                                                                            *
-# * This file has been provided pursuant to a License Agreement containing     *
-# * restrictions on its use. This file contains valuable trade secrets and     *
-# * proprietary information of Nangate Inc., and is protected by U.S. and      *
-# * international laws and/or treaties.                                        *
-# *                                                                            *
-# * The copyright notice(s) in this file does not indicate actual or intended  *
-# * publication of this file.                                                  *
-# *                                                                            *
-# *     NGLibraryCreator, v2010.08-HR32-SP3-2010-08-05 - build 1009061800      *
-# *                                                                            *
-# ******************************************************************************
-# 
-# 
-# Running on brazil06.nangate.com.br for user Giancarlo Franciscatto (gfr).
-# Local time is now Fri, 3 Dec 2010, 19:32:18.
-# Main process id is 27821.
-
 VERSION 5.6 ;
 BUSBITCHARS "[]" ;
 DIVIDERCHAR "/" ;
