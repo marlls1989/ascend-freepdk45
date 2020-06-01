@@ -1,0 +1,961 @@
+<HTML><BODY TEXT="#000000"  LINK="#0000FF" VLINK="#0000FF" ALINK="#00FFFF"><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100%>
+<TR align=center><th align=left><H1><font size=+3>NCLP4W1111OF4X1</font></H1></th>
+<TR align=center><th align=left></th><th align=right><h5><em><A>ASCEND_FREEPDK45_NOM_1.10V_25C Cell Library: Process , Voltage 1.10, Temp 25.00 </A></em></h5></th></TR>
+</TABLE>
+<HR>
+<BR>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=100%>
+<TR ALIGN=LEFT VALIGN=TOP><TH><FONT SIZE=+2><B>Truth Table</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4>
+<TR valign=middle><TH colspan=4><font size=3>INPUT</font></TH>
+<TH colspan=1><font size=3>OUTPUT</font></TH>
+<TR><Th>A</Th><Th>B</Th><Th>C</Th><Th>D</Th><Th>Q</Th></TR>
+<TR><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th></TR>
+<TR><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th></TR>
+<TR><Th><font size=2>0</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th></TR>
+<TR><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th></TR>
+<TR><Th><font size=2>1</font></Th><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th></TR>
+</TABLE>
+</TR></TABLE>
+<BR>
+<FONT SIZE=+2><B>Footprint</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=60%>
+<TR valign=middle><TH>Cell Name</TH><TH>Area</TH></TR>
+<TR><TH><FONT>NCLP4W1111OF4X1</FONT></TH>
+<TD align=center>0.00000</TD></TR>
+</TABLE>
+<BR>
+<BR>
+<FONT SIZE=+2><B>Pin Capacitance Information</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH colspan=4>Pin Cap(pf) </TH>
+<TH colspan=1>Max Cap(pf) </TH>
+</TR>
+<TR>
+<TH>A</TH>
+<TH>B</TH>
+<TH>C</TH>
+<TH>D</TH>
+<TH>Q</TH>
+</TR>
+<TR><Th><font>NCLP4W1111OF4X1</font></Th>
+<TD align=center>0.00146</TD>
+<TD align=center>0.00143</TD>
+<TD align=center>0.00144</TD>
+<TD align=center>0.00157</TD>
+<TD align=center>0.05000</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT SIZE=+2><B>Leakage Information</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH colspan=3>Leakage(nW)</TH>
+</TR><TR><TH>Min.</TH><TH>Avg</TH><TH>Max.</TH></TR>
+<TR><Th><font>NCLP4W1111OF4X1</font></Th>
+<TD align=center>82.88820</TD>
+<TD align=center>121.42200</TD>
+<TD align=center>168.72800</TD>
+</TABLE>
+<BR>
+<!--NewPage-->
+<BR>
+<FONT SIZE=+2><B>Delay Information</B></FONT>
+<BR>
+<BR>
+<FONT><B>Delay(ns) to Q rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Arc(Dir)</TH>
+<TH rowspan=2>When</TH>
+<TH colspan=3>Delay(ns)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
+<BR>
+<TR><TH rowspan=4>NCLP4W1111OF4X1</TH>
+<Th><font>A->Q (RR)</font></Th>
+<Th><font>B * C * D</font></Th>
+<TD align=center>0.03469</TD>
+<TD align=center>0.06171</TD>
+<TD align=center>0.17792</TD>
+</TR>
+<TR>
+<Th><font>B->Q (RR)</font></Th>
+<Th><font>A * C * D</font></Th>
+<TD align=center>0.03402</TD>
+<TD align=center>0.06535</TD>
+<TD align=center>0.20383</TD>
+</TR>
+<TR>
+<Th><font>C->Q (RR)</font></Th>
+<Th><font>A * B * D</font></Th>
+<TD align=center>0.03333</TD>
+<TD align=center>0.06942</TD>
+<TD align=center>0.22438</TD>
+</TR>
+<TR>
+<Th><font>D->Q (RR)</font></Th>
+<Th><font>A * B * C</font></Th>
+<TD align=center>0.03209</TD>
+<TD align=center>0.07160</TD>
+<TD align=center>0.23600</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Delay(ns) to Q falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Arc(Dir)</TH>
+<TH rowspan=2>When</TH>
+<TH colspan=3>Delay(ns)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
+<BR>
+<TR><TH rowspan=4>NCLP4W1111OF4X1</TH>
+<Th><font>A->Q (FF)</font></Th>
+<Th><font>!B * !C * !D</font></Th>
+<TD align=center>0.03708</TD>
+<TD align=center>0.06298</TD>
+<TD align=center>0.18071</TD>
+</TR>
+<TR>
+<Th><font>B->Q (FF)</font></Th>
+<Th><font>!A * !C * !D</font></Th>
+<TD align=center>0.03567</TD>
+<TD align=center>0.06492</TD>
+<TD align=center>0.20050</TD>
+</TR>
+<TR>
+<Th><font>C->Q (FF)</font></Th>
+<Th><font>!A * !B * !D</font></Th>
+<TD align=center>0.03331</TD>
+<TD align=center>0.06714</TD>
+<TD align=center>0.21607</TD>
+</TR>
+<TR>
+<Th><font>D->Q (FF)</font></Th>
+<Th><font>!A * !B * !C</font></Th>
+<TD align=center>0.02939</TD>
+<TD align=center>0.06710</TD>
+<TD align=center>0.22344</TD>
+</TR>
+</TABLE>
+<BR>
+<!--NewPage-->
+<BR>
+<FONT SIZE=+2><B>Power Information</B></FONT>
+<BR>
+<BR>
+<FONT><B>Internal switching power(pJ) to Q rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Input</TH>
+<TH rowspan=2>When</TH>
+<TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=4>NCLP4W1111OF4X1</TH>
+<Th><font>A</font></Th>
+<Th><font>B * C * D</font></Th>
+<TD align=center>0.00129</TD>
+<TD align=center>0.00156</TD>
+<TD align=center>0.00460</TD>
+</TR>
+<TR>
+<Th><font>B</font></Th>
+<Th><font>A * C * D</font></Th>
+<TD align=center>0.00140</TD>
+<TD align=center>0.00170</TD>
+<TD align=center>0.00485</TD>
+</TR>
+<TR>
+<Th><font>C</font></Th>
+<Th><font>A * B * D</font></Th>
+<TD align=center>0.00149</TD>
+<TD align=center>0.00187</TD>
+<TD align=center>0.00502</TD>
+</TR>
+<TR>
+<Th><font>D</font></Th>
+<Th><font>A * B * C</font></Th>
+<TD align=center>0.00151</TD>
+<TD align=center>0.00185</TD>
+<TD align=center>0.00515</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Internal switching power(pJ) to Q falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Input</TH>
+<TH rowspan=2>When</TH>
+<TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=4>NCLP4W1111OF4X1</TH>
+<Th><font>A</font></Th>
+<Th><font>!B * !C * !D</font></Th>
+<TD align=center>0.00308</TD>
+<TD align=center>0.00327</TD>
+<TD align=center>0.00662</TD>
+</TR>
+<TR>
+<Th><font>B</font></Th>
+<Th><font>!A * !C * !D</font></Th>
+<TD align=center>0.00292</TD>
+<TD align=center>0.00318</TD>
+<TD align=center>0.00645</TD>
+</TR>
+<TR>
+<Th><font>C</font></Th>
+<Th><font>!A * !B * !D</font></Th>
+<TD align=center>0.00276</TD>
+<TD align=center>0.00312</TD>
+<TD align=center>0.00630</TD>
+</TR>
+<TR>
+<Th><font>D</font></Th>
+<Th><font>!A * !B * !C</font></Th>
+<TD align=center>0.00254</TD>
+<TD align=center>0.00298</TD>
+<TD align=center>0.00639</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(pJ) for A rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=14>NCLP4W1111OF4X1</TH>
+<Th><font>B * C * D * Q</font></Th>
+<TD align=center>0.00246</TD>
+<TD align=center>0.00243</TD>
+<TD align=center>0.00243</TD>
+</TR>
+<TR>
+<Th><font>B * C * !D * Q</font></Th>
+<TD align=center>0.00410</TD>
+<TD align=center>0.00409</TD>
+<TD align=center>0.00409</TD>
+</TR>
+<TR>
+<Th><font>B * C * !D * !Q</font></Th>
+<TD align=center>0.00612</TD>
+<TD align=center>0.00612</TD>
+<TD align=center>0.00612</TD>
+</TR>
+<TR>
+<Th><font>B * !C * D * Q</font></Th>
+<TD align=center>0.00409</TD>
+<TD align=center>0.00408</TD>
+<TD align=center>0.00408</TD>
+</TR>
+<TR>
+<Th><font>B * !C * D * !Q</font></Th>
+<TD align=center>0.00543</TD>
+<TD align=center>0.00542</TD>
+<TD align=center>0.00542</TD>
+</TR>
+<TR>
+<Th><font>B * !C * !D * Q</font></Th>
+<TD align=center>0.00511</TD>
+<TD align=center>0.00511</TD>
+<TD align=center>0.00511</TD>
+</TR>
+<TR>
+<Th><font>B * !C * !D * !Q</font></Th>
+<TD align=center>0.00511</TD>
+<TD align=center>0.00512</TD>
+<TD align=center>0.00511</TD>
+</TR>
+<TR>
+<Th><font>!B * C * D * Q</font></Th>
+<TD align=center>0.00425</TD>
+<TD align=center>0.00423</TD>
+<TD align=center>0.00422</TD>
+</TR>
+<TR>
+<Th><font>!B * C * D * !Q</font></Th>
+<TD align=center>0.00539</TD>
+<TD align=center>0.00538</TD>
+<TD align=center>0.00537</TD>
+</TR>
+<TR>
+<Th><font>!B * C * !D * Q</font></Th>
+<TD align=center>0.00497</TD>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+</TR>
+<TR>
+<Th><font>!B * C * !D * !Q</font></Th>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+</TR>
+<TR>
+<Th><font>!B * !C * D * Q</font></Th>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00497</TD>
+<TD align=center>0.00496</TD>
+</TR>
+<TR>
+<Th><font>!B * !C * D * !Q</font></Th>
+<TD align=center>0.00499</TD>
+<TD align=center>0.00497</TD>
+<TD align=center>0.00497</TD>
+</TR>
+<TR>
+<Th><font>!B * !C * !D * !Q</font></Th>
+<TD align=center>0.00549</TD>
+<TD align=center>0.00549</TD>
+<TD align=center>0.00548</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(pJ) for A falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=14>NCLP4W1111OF4X1</TH>
+<Th><font>B * C * D * Q</font></Th>
+<TD align=center>0.00532</TD>
+<TD align=center>0.00533</TD>
+<TD align=center>0.00532</TD>
+</TR>
+<TR>
+<Th><font>B * C * !D * Q</font></Th>
+<TD align=center>0.00557</TD>
+<TD align=center>0.00557</TD>
+<TD align=center>0.00557</TD>
+</TR>
+<TR>
+<Th><font>B * C * !D * !Q</font></Th>
+<TD align=center>0.00557</TD>
+<TD align=center>0.00557</TD>
+<TD align=center>0.00557</TD>
+</TR>
+<TR>
+<Th><font>B * !C * D * Q</font></Th>
+<TD align=center>0.00559</TD>
+<TD align=center>0.00559</TD>
+<TD align=center>0.00558</TD>
+</TR>
+<TR>
+<Th><font>B * !C * D * !Q</font></Th>
+<TD align=center>0.00559</TD>
+<TD align=center>0.00558</TD>
+<TD align=center>0.00559</TD>
+</TR>
+<TR>
+<Th><font>B * !C * !D * Q</font></Th>
+<TD align=center>0.00683</TD>
+<TD align=center>0.00684</TD>
+<TD align=center>0.00683</TD>
+</TR>
+<TR>
+<Th><font>B * !C * !D * !Q</font></Th>
+<TD align=center>0.00648</TD>
+<TD align=center>0.00648</TD>
+<TD align=center>0.00647</TD>
+</TR>
+<TR>
+<Th><font>!B * C * D * Q</font></Th>
+<TD align=center>0.00594</TD>
+<TD align=center>0.00595</TD>
+<TD align=center>0.00594</TD>
+</TR>
+<TR>
+<Th><font>!B * C * D * !Q</font></Th>
+<TD align=center>0.00593</TD>
+<TD align=center>0.00594</TD>
+<TD align=center>0.00594</TD>
+</TR>
+<TR>
+<Th><font>!B * C * !D * Q</font></Th>
+<TD align=center>0.00729</TD>
+<TD align=center>0.00730</TD>
+<TD align=center>0.00730</TD>
+</TR>
+<TR>
+<Th><font>!B * C * !D * !Q</font></Th>
+<TD align=center>0.00641</TD>
+<TD align=center>0.00640</TD>
+<TD align=center>0.00641</TD>
+</TR>
+<TR>
+<Th><font>!B * !C * D * Q</font></Th>
+<TD align=center>0.00888</TD>
+<TD align=center>0.00888</TD>
+<TD align=center>0.00888</TD>
+</TR>
+<TR>
+<Th><font>!B * !C * D * !Q</font></Th>
+<TD align=center>0.00649</TD>
+<TD align=center>0.00649</TD>
+<TD align=center>0.00649</TD>
+</TR>
+<TR>
+<Th><font>!B * !C * !D * !Q</font></Th>
+<TD align=center>0.00608</TD>
+<TD align=center>0.00607</TD>
+<TD align=center>0.00607</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(pJ) for B rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=14>NCLP4W1111OF4X1</TH>
+<Th><font>A * C * D * Q</font></Th>
+<TD align=center>0.00257</TD>
+<TD align=center>0.00255</TD>
+<TD align=center>0.00255</TD>
+</TR>
+<TR>
+<Th><font>A * C * !D * Q</font></Th>
+<TD align=center>0.00423</TD>
+<TD align=center>0.00423</TD>
+<TD align=center>0.00423</TD>
+</TR>
+<TR>
+<Th><font>A * C * !D * !Q</font></Th>
+<TD align=center>0.00612</TD>
+<TD align=center>0.00612</TD>
+<TD align=center>0.00612</TD>
+</TR>
+<TR>
+<Th><font>A * !C * D * Q</font></Th>
+<TD align=center>0.00423</TD>
+<TD align=center>0.00423</TD>
+<TD align=center>0.00423</TD>
+</TR>
+<TR>
+<Th><font>A * !C * D * !Q</font></Th>
+<TD align=center>0.00545</TD>
+<TD align=center>0.00545</TD>
+<TD align=center>0.00545</TD>
+</TR>
+<TR>
+<Th><font>A * !C * !D * Q</font></Th>
+<TD align=center>0.00512</TD>
+<TD align=center>0.00512</TD>
+<TD align=center>0.00512</TD>
+</TR>
+<TR>
+<Th><font>A * !C * !D * !Q</font></Th>
+<TD align=center>0.00512</TD>
+<TD align=center>0.00511</TD>
+<TD align=center>0.00512</TD>
+</TR>
+<TR>
+<Th><font>!A * C * D * Q</font></Th>
+<TD align=center>0.00436</TD>
+<TD align=center>0.00434</TD>
+<TD align=center>0.00434</TD>
+</TR>
+<TR>
+<Th><font>!A * C * D * !Q</font></Th>
+<TD align=center>0.00548</TD>
+<TD align=center>0.00548</TD>
+<TD align=center>0.00547</TD>
+</TR>
+<TR>
+<Th><font>!A * C * !D * Q</font></Th>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00498</TD>
+</TR>
+<TR>
+<Th><font>!A * C * !D * !Q</font></Th>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00498</TD>
+</TR>
+<TR>
+<Th><font>!A * !C * D * Q</font></Th>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00495</TD>
+</TR>
+<TR>
+<Th><font>!A * !C * D * !Q</font></Th>
+<TD align=center>0.00497</TD>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+</TR>
+<TR>
+<Th><font>!A * !C * !D * !Q</font></Th>
+<TD align=center>0.00543</TD>
+<TD align=center>0.00543</TD>
+<TD align=center>0.00542</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(pJ) for B falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=14>NCLP4W1111OF4X1</TH>
+<Th><font>A * C * D * Q</font></Th>
+<TD align=center>0.00502</TD>
+<TD align=center>0.00502</TD>
+<TD align=center>0.00502</TD>
+</TR>
+<TR>
+<Th><font>A * C * !D * Q</font></Th>
+<TD align=center>0.00520</TD>
+<TD align=center>0.00520</TD>
+<TD align=center>0.00520</TD>
+</TR>
+<TR>
+<Th><font>A * C * !D * !Q</font></Th>
+<TD align=center>0.00520</TD>
+<TD align=center>0.00520</TD>
+<TD align=center>0.00520</TD>
+</TR>
+<TR>
+<Th><font>A * !C * D * Q</font></Th>
+<TD align=center>0.00522</TD>
+<TD align=center>0.00522</TD>
+<TD align=center>0.00522</TD>
+</TR>
+<TR>
+<Th><font>A * !C * D * !Q</font></Th>
+<TD align=center>0.00522</TD>
+<TD align=center>0.00522</TD>
+<TD align=center>0.00522</TD>
+</TR>
+<TR>
+<Th><font>A * !C * !D * Q</font></Th>
+<TD align=center>0.00642</TD>
+<TD align=center>0.00642</TD>
+<TD align=center>0.00642</TD>
+</TR>
+<TR>
+<Th><font>A * !C * !D * !Q</font></Th>
+<TD align=center>0.00650</TD>
+<TD align=center>0.00649</TD>
+<TD align=center>0.00649</TD>
+</TR>
+<TR>
+<Th><font>!A * C * D * Q</font></Th>
+<TD align=center>0.00583</TD>
+<TD align=center>0.00582</TD>
+<TD align=center>0.00582</TD>
+</TR>
+<TR>
+<Th><font>!A * C * D * !Q</font></Th>
+<TD align=center>0.00583</TD>
+<TD align=center>0.00583</TD>
+<TD align=center>0.00582</TD>
+</TR>
+<TR>
+<Th><font>!A * C * !D * Q</font></Th>
+<TD align=center>0.00719</TD>
+<TD align=center>0.00719</TD>
+<TD align=center>0.00719</TD>
+</TR>
+<TR>
+<Th><font>!A * C * !D * !Q</font></Th>
+<TD align=center>0.00640</TD>
+<TD align=center>0.00641</TD>
+<TD align=center>0.00641</TD>
+</TR>
+<TR>
+<Th><font>!A * !C * D * Q</font></Th>
+<TD align=center>0.00874</TD>
+<TD align=center>0.00874</TD>
+<TD align=center>0.00873</TD>
+</TR>
+<TR>
+<Th><font>!A * !C * D * !Q</font></Th>
+<TD align=center>0.00649</TD>
+<TD align=center>0.00649</TD>
+<TD align=center>0.00649</TD>
+</TR>
+<TR>
+<Th><font>!A * !C * !D * !Q</font></Th>
+<TD align=center>0.00608</TD>
+<TD align=center>0.00607</TD>
+<TD align=center>0.00607</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(pJ) for C rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=14>NCLP4W1111OF4X1</TH>
+<Th><font>A * B * D * Q</font></Th>
+<TD align=center>0.00259</TD>
+<TD align=center>0.00256</TD>
+<TD align=center>0.00256</TD>
+</TR>
+<TR>
+<Th><font>A * B * !D * Q</font></Th>
+<TD align=center>0.00427</TD>
+<TD align=center>0.00427</TD>
+<TD align=center>0.00427</TD>
+</TR>
+<TR>
+<Th><font>A * B * !D * !Q</font></Th>
+<TD align=center>0.00612</TD>
+<TD align=center>0.00612</TD>
+<TD align=center>0.00612</TD>
+</TR>
+<TR>
+<Th><font>A * !B * D * Q</font></Th>
+<TD align=center>0.00430</TD>
+<TD align=center>0.00430</TD>
+<TD align=center>0.00430</TD>
+</TR>
+<TR>
+<Th><font>A * !B * D * !Q</font></Th>
+<TD align=center>0.00548</TD>
+<TD align=center>0.00548</TD>
+<TD align=center>0.00548</TD>
+</TR>
+<TR>
+<Th><font>A * !B * !D * Q</font></Th>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+</TR>
+<TR>
+<Th><font>A * !B * !D * !Q</font></Th>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+<TD align=center>0.00496</TD>
+</TR>
+<TR>
+<Th><font>!A * B * D * Q</font></Th>
+<TD align=center>0.00448</TD>
+<TD align=center>0.00447</TD>
+<TD align=center>0.00447</TD>
+</TR>
+<TR>
+<Th><font>!A * B * D * !Q</font></Th>
+<TD align=center>0.00560</TD>
+<TD align=center>0.00560</TD>
+<TD align=center>0.00559</TD>
+</TR>
+<TR>
+<Th><font>!A * B * !D * Q</font></Th>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00498</TD>
+</TR>
+<TR>
+<Th><font>!A * B * !D * !Q</font></Th>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00498</TD>
+<TD align=center>0.00498</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * D * Q</font></Th>
+<TD align=center>0.00521</TD>
+<TD align=center>0.00521</TD>
+<TD align=center>0.00520</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * D * !Q</font></Th>
+<TD align=center>0.00521</TD>
+<TD align=center>0.00521</TD>
+<TD align=center>0.00521</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * !D * !Q</font></Th>
+<TD align=center>0.00542</TD>
+<TD align=center>0.00542</TD>
+<TD align=center>0.00541</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(pJ) for C falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=14>NCLP4W1111OF4X1</TH>
+<Th><font>A * B * D * Q</font></Th>
+<TD align=center>0.00493</TD>
+<TD align=center>0.00493</TD>
+<TD align=center>0.00492</TD>
+</TR>
+<TR>
+<Th><font>A * B * !D * Q</font></Th>
+<TD align=center>0.00524</TD>
+<TD align=center>0.00524</TD>
+<TD align=center>0.00524</TD>
+</TR>
+<TR>
+<Th><font>A * B * !D * !Q</font></Th>
+<TD align=center>0.00523</TD>
+<TD align=center>0.00523</TD>
+<TD align=center>0.00523</TD>
+</TR>
+<TR>
+<Th><font>A * !B * D * Q</font></Th>
+<TD align=center>0.00521</TD>
+<TD align=center>0.00521</TD>
+<TD align=center>0.00521</TD>
+</TR>
+<TR>
+<Th><font>A * !B * D * !Q</font></Th>
+<TD align=center>0.00521</TD>
+<TD align=center>0.00521</TD>
+<TD align=center>0.00521</TD>
+</TR>
+<TR>
+<Th><font>A * !B * !D * Q</font></Th>
+<TD align=center>0.00651</TD>
+<TD align=center>0.00650</TD>
+<TD align=center>0.00650</TD>
+</TR>
+<TR>
+<Th><font>A * !B * !D * !Q</font></Th>
+<TD align=center>0.00651</TD>
+<TD align=center>0.00651</TD>
+<TD align=center>0.00651</TD>
+</TR>
+<TR>
+<Th><font>!A * B * D * Q</font></Th>
+<TD align=center>0.00544</TD>
+<TD align=center>0.00544</TD>
+<TD align=center>0.00544</TD>
+</TR>
+<TR>
+<Th><font>!A * B * D * !Q</font></Th>
+<TD align=center>0.00544</TD>
+<TD align=center>0.00544</TD>
+<TD align=center>0.00544</TD>
+</TR>
+<TR>
+<Th><font>!A * B * !D * Q</font></Th>
+<TD align=center>0.00673</TD>
+<TD align=center>0.00673</TD>
+<TD align=center>0.00673</TD>
+</TR>
+<TR>
+<Th><font>!A * B * !D * !Q</font></Th>
+<TD align=center>0.00641</TD>
+<TD align=center>0.00641</TD>
+<TD align=center>0.00641</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * D * Q</font></Th>
+<TD align=center>0.00861</TD>
+<TD align=center>0.00861</TD>
+<TD align=center>0.00861</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * D * !Q</font></Th>
+<TD align=center>0.00646</TD>
+<TD align=center>0.00646</TD>
+<TD align=center>0.00646</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * !D * !Q</font></Th>
+<TD align=center>0.00608</TD>
+<TD align=center>0.00607</TD>
+<TD align=center>0.00607</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(pJ) for D rising (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=14>NCLP4W1111OF4X1</TH>
+<Th><font>A * B * C * Q</font></Th>
+<TD align=center>0.00263</TD>
+<TD align=center>0.00261</TD>
+<TD align=center>0.00261</TD>
+</TR>
+<TR>
+<Th><font>A * B * !C * Q</font></Th>
+<TD align=center>0.00428</TD>
+<TD align=center>0.00428</TD>
+<TD align=center>0.00428</TD>
+</TR>
+<TR>
+<Th><font>A * B * !C * !Q</font></Th>
+<TD align=center>0.00555</TD>
+<TD align=center>0.00554</TD>
+<TD align=center>0.00553</TD>
+</TR>
+<TR>
+<Th><font>A * !B * C * Q</font></Th>
+<TD align=center>0.00436</TD>
+<TD align=center>0.00436</TD>
+<TD align=center>0.00436</TD>
+</TR>
+<TR>
+<Th><font>A * !B * C * !Q</font></Th>
+<TD align=center>0.00562</TD>
+<TD align=center>0.00561</TD>
+<TD align=center>0.00560</TD>
+</TR>
+<TR>
+<Th><font>A * !B * !C * Q</font></Th>
+<TD align=center>0.00511</TD>
+<TD align=center>0.00509</TD>
+<TD align=center>0.00508</TD>
+</TR>
+<TR>
+<Th><font>A * !B * !C * !Q</font></Th>
+<TD align=center>0.00510</TD>
+<TD align=center>0.00509</TD>
+<TD align=center>0.00508</TD>
+</TR>
+<TR>
+<Th><font>!A * B * C * Q</font></Th>
+<TD align=center>0.00452</TD>
+<TD align=center>0.00451</TD>
+<TD align=center>0.00451</TD>
+</TR>
+<TR>
+<Th><font>!A * B * C * !Q</font></Th>
+<TD align=center>0.00572</TD>
+<TD align=center>0.00573</TD>
+<TD align=center>0.00572</TD>
+</TR>
+<TR>
+<Th><font>!A * B * !C * Q</font></Th>
+<TD align=center>0.00507</TD>
+<TD align=center>0.00507</TD>
+<TD align=center>0.00506</TD>
+</TR>
+<TR>
+<Th><font>!A * B * !C * !Q</font></Th>
+<TD align=center>0.00506</TD>
+<TD align=center>0.00506</TD>
+<TD align=center>0.00506</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * C * Q</font></Th>
+<TD align=center>0.00534</TD>
+<TD align=center>0.00534</TD>
+<TD align=center>0.00534</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * C * !Q</font></Th>
+<TD align=center>0.00533</TD>
+<TD align=center>0.00533</TD>
+<TD align=center>0.00533</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * !C * !Q</font></Th>
+<TD align=center>0.00560</TD>
+<TD align=center>0.00560</TD>
+<TD align=center>0.00559</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Passive power(pJ) for D falling (conditional):</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH>
+<TH rowspan=2>When</TH>
+</TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
+<TR><TH rowspan=14>NCLP4W1111OF4X1</TH>
+<Th><font>A * B * C * Q</font></Th>
+<TD align=center>0.00500</TD>
+<TD align=center>0.00500</TD>
+<TD align=center>0.00499</TD>
+</TR>
+<TR>
+<Th><font>A * B * !C * Q</font></Th>
+<TD align=center>0.00529</TD>
+<TD align=center>0.00529</TD>
+<TD align=center>0.00530</TD>
+</TR>
+<TR>
+<Th><font>A * B * !C * !Q</font></Th>
+<TD align=center>0.00530</TD>
+<TD align=center>0.00530</TD>
+<TD align=center>0.00530</TD>
+</TR>
+<TR>
+<Th><font>A * !B * C * Q</font></Th>
+<TD align=center>0.00524</TD>
+<TD align=center>0.00524</TD>
+<TD align=center>0.00524</TD>
+</TR>
+<TR>
+<Th><font>A * !B * C * !Q</font></Th>
+<TD align=center>0.00524</TD>
+<TD align=center>0.00524</TD>
+<TD align=center>0.00524</TD>
+</TR>
+<TR>
+<Th><font>A * !B * !C * Q</font></Th>
+<TD align=center>0.00658</TD>
+<TD align=center>0.00657</TD>
+<TD align=center>0.00657</TD>
+</TR>
+<TR>
+<Th><font>A * !B * !C * !Q</font></Th>
+<TD align=center>0.00645</TD>
+<TD align=center>0.00645</TD>
+<TD align=center>0.00645</TD>
+</TR>
+<TR>
+<Th><font>!A * B * C * Q</font></Th>
+<TD align=center>0.00548</TD>
+<TD align=center>0.00548</TD>
+<TD align=center>0.00548</TD>
+</TR>
+<TR>
+<Th><font>!A * B * C * !Q</font></Th>
+<TD align=center>0.00549</TD>
+<TD align=center>0.00549</TD>
+<TD align=center>0.00549</TD>
+</TR>
+<TR>
+<Th><font>!A * B * !C * Q</font></Th>
+<TD align=center>0.00680</TD>
+<TD align=center>0.00680</TD>
+<TD align=center>0.00680</TD>
+</TR>
+<TR>
+<Th><font>!A * B * !C * !Q</font></Th>
+<TD align=center>0.00644</TD>
+<TD align=center>0.00645</TD>
+<TD align=center>0.00645</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * C * Q</font></Th>
+<TD align=center>0.00709</TD>
+<TD align=center>0.00709</TD>
+<TD align=center>0.00709</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * C * !Q</font></Th>
+<TD align=center>0.00645</TD>
+<TD align=center>0.00645</TD>
+<TD align=center>0.00645</TD>
+</TR>
+<TR>
+<Th><font>!A * !B * !C * !Q</font></Th>
+<TD align=center>0.00606</TD>
+<TD align=center>0.00605</TD>
+<TD align=center>0.00605</TD>
+</TR>
+</TABLE>
+<BR>
+<DIV class=NOPRINT>
+<HR>
+<TABLE BORDER=0 WIDTH=100%>
+<TR>
+<TD ALIGN=LEFT><TABLE BORDER=5><TD><em><A hREF="NCLP3W111OF3X4.html">Prev (NCLP3W111OF3X4)</A></em></TD></TABLE>
+<TD ALIGN=RIGHT><TABLE BORDER=5><TD><em><A hREF="NCLP4W1111OF4X2.html">Next (NCLP4W1111OF4X2)</A></em></TD></TABLE>
+</TR></TABLE>
+</DIV>
+</BODY>
+</HTML>

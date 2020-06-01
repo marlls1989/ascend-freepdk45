@@ -1,0 +1,116 @@
+metal1		NET		11		0
+metal1		SPNET		11		0
+metal1		PIN		11		0
+metal1		FILL		11		0
+metal1		VIA		11		0
+metal1		VIAFILL		11		0
+NAME		metal1/PIN	11 		0
+NAME		metal1/SPNET	11 		0
+
+metal2		NET		13		0
+metal2		SPNET		13		0
+metal2		PIN		13		0
+metal2		FILL		13		0
+metal2		VIA		13		0
+metal2		VIAFILL		13		0
+NAME		metal2/PIN	13 		0
+NAME		metal2/SPNET	13 		0
+
+metal3		NET		15		0
+metal3		SPNET		15		0
+metal3		PIN		15		0
+metal3		FILL		15		0
+metal3		VIA		15		0
+metal3		VIAFILL		15		0
+NAME		metal3/PIN	15 		0
+NAME		metal3/SPNET	15 		0
+
+metal4		NET		17		0
+metal4		SPNET		17		0
+metal4		PIN		17 		0
+metal4		FILL		17 		0
+metal4		VIA		17		0
+metal4		VIAFILL		17		0
+NAME		metal4/PIN	17 		0
+NAME		metal4/SPNET	17 		0
+
+metal5		NET		19		0
+metal5		SPNET		19		0
+metal5		PIN		19		0
+metal5		FILL		19		0
+metal5		VIA		19		0
+metal5		VIAFILL		19		0
+NAME		metal5/PIN	19 		0
+NAME		metal5/SPNET	19 		0
+
+metal6		NET		21		0
+metal6		SPNET		21		0
+metal6		PIN		21		0
+metal6		FILL		21		0
+metal6		VIA		21		0
+metal6		VIAFILL		21		0
+NAME		metal6/PIN	21 		0
+NAME		metal6/SPNET	21 		0
+
+metal7		NET		23		0
+metal7		SPNET		23		0
+metal7		PIN		23 		0
+metal7		FILL		23 		0
+metal7		VIA		23		0
+metal7		VIAFILL		23		0
+NAME		metal7/PIN	23 		0
+NAME		metal7/SPNET	23 		0
+
+metal8		NET		25		0
+metal8		SPNET		25		0
+metal8		PIN		25		0
+metal8		FILL		25		0
+metal8		VIA		25		0
+metal8		VIAFILL		25		0
+NAME		metal8/PIN	25 		0
+NAME		metal8/SPNET	25 		0
+
+metal9		NET		27		0
+metal9		SPNET		27		0
+metal9		PIN		27		0
+metal9		FILL		27		0
+metal9		VIA		27		0
+metal9		VIAFILL		27		0
+NAME		metal6/PIN	27 		0
+NAME		metal6/SPNET	27 		0
+
+metal10		NET		29		0
+metal10		SPNET		29		0
+metal10		PIN		29		0
+metal10		FILL		29		0
+metal10		VIA		29		0
+metal10		VIAFILL		29		0
+NAME		metal6/PIN	29 		0
+NAME		metal6/SPNET	29 		0
+
+via 		VIA		12		0
+via 		VIAFILL		12		0
+
+via2 		VIA		14		0
+via2 		VIAFILL		14		0
+
+via3 		VIA		16		0
+via3 		VIAFILL		16		0
+
+via4 		VIA		18		0
+via4 		VIAFILL		18		0
+
+via5            VIA             20              0
+via5 		VIAFILL		20		0
+
+via6		VIA		22		0
+via6		VIAFILL		22		0
+
+via7 		VIA		24		0
+via7 		VIAFILL		24		0
+
+via8 		VIA		26		0
+via8 		VIAFILL		26 		0
+
+via9 		VIA		28		0
+via9 		VIAFILL		28		0
