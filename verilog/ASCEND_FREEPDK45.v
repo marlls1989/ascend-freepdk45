@@ -4224,10 +4224,10 @@ NCLPOA22OF4_Q u_NCLPOA22OF4_Q (Q, A, B, C, D);
 endmodule
 `endcelldefine
 
-primitive PULLDOWN_Q(Q);
+module PULLDOWN_Q(Q);
 output Q;
 assign Q = 1'b0;
-endprimitive
+endmodule
 
 `celldefine
 module PULLDOWN(Q);
@@ -4242,10 +4242,10 @@ PULLDOWN_Q u_PULLDOWN_Q (Q);
 endmodule
 `endcelldefine
 
-primitive PULLUP_Q(Q);
+module PULLUP_Q(Q);
 output Q;
 assign Q = 1'b1;
-endprimitive
+endmodule
 
 `celldefine
 module PULLUP(Q);
