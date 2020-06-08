@@ -23,7 +23,7 @@ This release of ASCEnD-freePDK45 is distributed in seven folders:
 |-- lib<br>
 |-- netlist<br>
 |-- oa<br>
-`-- verilog<br>
+|-- verilog<br>
 
 The folder ./doc contains the datasheet for every cell in the library, in html format (Note that in the current library release the area field of the cells in not valid, all of these are zeroed). The ./gds folder contains all cell layouts. The ./lef folder provides the cell abstract views (pin locations and metal layers blocks). The ./lib folder furnishes the cell characterization data in a machine readable format (.lib). The ./netlist folder contains the cell transistor schematics as Spice descriptions, including transistor sizing data. The ./oa folder contains layout information in the open access internal format. Finally, the ./verilog folder contains the behavioral cell description.
 
