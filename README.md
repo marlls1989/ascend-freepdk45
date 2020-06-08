@@ -25,7 +25,7 @@ This release of ASCEnD-freePDK45 is distributed in seven folders:
 |-- oa<br>
 |-- verilog<br>
 
-The folder ./doc contains the datasheet for every cell in the library, in html format (Note that in the current library release the area field of the cells in not valid, all of these are zeroed). The ./gds folder contains all cell layouts. The ./lef folder provides the cell abstract views (pin locations and metal layers blocks). The ./lib folder furnishes the cell characterization data in a machine readable format (.lib). The ./netlist folder contains the cell transistor schematics as Spice descriptions, including transistor sizing data. The ./oa folder contains layout information in the open access internal format. Finally, the ./verilog folder contains the behavioral cell description.
+The folder ./doc contains the datasheet for every cell in the library, in html format (Note that in the current library release the area field of the cells is not valid, all of these fields are zeroed). The ./gds folder contains all cell layouts. The ./lef folder provides the cell abstract views (pin locations and metal layers blocks). The ./lib folder furnishes the cell characterization data in a machine readable format (.lib). The ./netlist folder contains the cell transistor schematics as Spice descriptions, including transistor sizing data. The ./oa folder contains layout information in the open access internal format. Finally, the ./verilog folder contains the behavioral cell description.
 
 The library ASCEnD-freePDK45 comes with characterization data for three corners: NOM (Nominal 1.10V, 25C), SS (Slow-Slow 0.95V, 125C) and FF (1.25V, 0C). Separate .lib and .html files are accordingly available for each of the corners.
 
@@ -36,10 +36,16 @@ It is necessary to point out here to the way the behavior of sequential gates (m
   - The OFF-set, a function that is '1' when the gate is expected to force '0' in its output, and is '0' otherwise.
   - The HOLD-set, a function that is '1' when the gate is expected to keep its output unchanged and is '0' otherwise.
 
-Traditional design tools (e.g. Cadence or Synopsys frameworks) manipulate gate behaviors based on a single Boolean function. Given this and considering the threshold with hysteresis behavior of NCL/NCLP gates, the ASCEnD-freePDK45 characterization data provides a single Boolean function to represent the "activation function" of the gate, merging the three functions in specific ways, as explained in publications [1] to [7] below.
+Traditional design tools (e.g. Cadence or Synopsys frameworks) manipulate gate behaviors based on a single Boolean function. Given this and considering the threshold with hysteresis behavior of NCL/NCLP gates, the ASCEnD-freePDK45 characterization data provides a single Boolean function to represent the "activation function" of the gate, merging the three functions in specific ways, as explained in references [1] to [7] below.
 
-Information about the NCL+ gates, particular templates based on NCL, NCL+ and mixes of these can be found in several of the ASCEnD-freePDK45 authors' publications. A selected list about ASCEnD libraries and about newly proposed asynchronous QDI design templates appear below:
+For those interested in using the full spectrum of the ASCEnD-freePDK45 library, we will soon disclose, in a companion project of this, the Pulsar tool. Pulsar is a push-button synthesis tool that accepts a SystemVerilog or VHDL description and can output the layout of an SDDS-NCL circuit implemented with ASCEnD-freePDK45.
 
+Information about the NCL+ gates, particular templates based on NCL, NCL+ and mixes of these can be found in several of the ASCEnD-freePDK45 authors' publications. A selected list about ASCEnD libraries and about newly proposed asynchronous QDI design templates appear below.
+
+ACKNOWLEDGEMENTS
+The development of the ASCEnD-freePDK45 library was enabled through the use of several professional tools. These were obtained through agreements in the scope of cooperation projects as well as engagement in Institutional University Programs. In these contexts we acknowledge the support of Silvaco Inc., Cadence Inc., Synopsys Inc. and Mentor Graphics (Siemens).
+
+REFERENCES
 [1] - SARTORI, M. L. L.; MOREIRA, M. T.; CALAZANS, N. L. V. A Frontend using Traditional EDA Tools for the Pulsar QDI Design Flow. In: 26th IEEE International Symposium on Asynchronous Circuits and Systems (ASYNC'20), 2020. To be presented.
 
 [2] - SARTORI, M. L. L.. PULSAR: Towards a Synthesis flow for QDI Circuits. MSc Dissertation, PPGCC-FACIN-PUCRS, Porto Alegre, Brazil. August 2019. (Research Advisor: Ney Laert Vilar Calazans)
