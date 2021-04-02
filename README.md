@@ -46,7 +46,7 @@ Information about the NCL+ gates, particular templates based on NCL, NCL+ and mi
 The development of the ASCEnD-freePDK45 library was enabled through the use of several professional tools. These were obtained through agreements in the scope of cooperation projects as well as engagement in Institutional University Programs. In these contexts we acknowledge the support of Silvaco Inc., Cadence Inc., Synopsys Inc. and Mentor Graphics (now a Siemens company).
 
 ## REFERENCES
-[1] - SARTORI, M. L. L.; MOREIRA, M. T.; CALAZANS, N. L. V. A Frontend using Traditional EDA Tools for the Pulsar QDI Design Flow. In: 26th IEEE International Symposium on Asynchronous Circuits and Systems (ASYNC'20), Snowbird, 2020. pp. 3-10. Avalable at: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9179357
+[1] - SARTORI, M. L. L.; MOREIRA, M. T.; CALAZANS, N. L. V. A Frontend using Traditional EDA Tools for the Pulsar QDI Design Flow. In: 26th IEEE International Symposium on Asynchronous Circuits and Systems (ASYNC'20), Snowbird, 2020. pp. 3-10. Avalable at: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9179357.
 
 [2] - SARTORI, M. L. L. PULSAR: Towards a Synthesis flow for QDI Circuits. MSc Dissertation, PPGCC-FACIN-PUCRS, Porto Alegre, Brazil. August 2019. (Research Advisor: Ney Laert Vilar Calazans). Available at: https://www.inf.pucrs.br/~calazans/publications/2019_MarcosSartori_MScDiss.pdf.
 
