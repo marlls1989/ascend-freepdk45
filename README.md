@@ -7,7 +7,7 @@ A free standard cell library for SDDS-NCL circuits
 //    Marcos Luiggi Lemos Sartori <br>
 //    Matheus Trevisan Moreira <br>
 //    Ney Laert Vilar Calazans <br>
-// Contact: ney.calazans@pucrs.br, marcos.sartori@acad.pucrs.br or gaph-l@lista.pucrs.br <br>
+// Contact: ney.calazans@pucrs.br, marcos.sartori@acad.pucrs.br or gaph@googlegroups.com <br>
 
 This is a distribution for the ASCEnD-freePDK45 library, developed over the North Carolina State University (NCSU) open source predictive Process Design Kit (PDK) FreePDK 45nm (bulk CMOS). The library supports the design of asynchronous circuits. ASCEnD stands for "Asynchronous Standard Cells for 'n' Designs". The asynchronous design templates supported by the library are from the quasi-delay insensitive (QDI) class, all based on the Null Convention Logic (NCL) paradigm. On top of this paradigm, the library developers propose, besides conventional NCL gates, an additional set of gates with behavior dual to NCL, the NCL+ (or NCLP) gates [8]. The library contains NCL gates as well as NCL+ gates and inverted versions of both these gate types (INCL and INCLP).
 
