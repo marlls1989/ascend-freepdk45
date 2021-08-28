@@ -1,6 +1,6 @@
 <HTML><BODY TEXT="#000000"  LINK="#0000FF" VLINK="#0000FF" ALINK="#00FFFF"><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100%>
 <TR align=center><th align=left><H1><font size=+3>RNCL2W11OF2X4</font></H1></th>
-<TR align=center><th align=left></th><th align=right><h5><em><A>ASCEND_FREEPDK45_NOM_1.10V_25C Cell Library: Process , Voltage 1.10, Temp 25.00 </A></em></h5></th></TR>
+<TR align=center><th align=left></th><th align=right><h5><em><A>ASCEND_FREEPDK45_NOM_1.10V_25C Cell Library: Process PVT_1P1V_25C, Voltage 1.10, Temp 25.00 </A></em></h5></th></TR>
 </TABLE>
 <HR>
 <BR>
@@ -9,9 +9,9 @@
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4>
 <TR valign=middle><TH colspan=4><font size=3>INPUT</font></TH>
 <TH colspan=1><font size=3>OUTPUT</font></TH>
-<TR><Th>A</Th><Th>B</Th><Th>RN</Th><Th>G</Th><Th>Q</Th></TR>
-<TR><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>0</font></Th><Th><font size=2>x</font></Th><Th><font size=2>0</font></Th></TR>
-<TR><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th><Th><font size=2>IQ</font></Th></TR>
+<TR><Th>A</Th><Th>B</Th><Th>G</Th><Th>RN</Th><Th>Q</Th></TR>
+<TR><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th></TR>
+<TR><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>0</font></Th><Th><font size=2>1</font></Th><Th><font size=2>IQ</font></Th></TR>
 <TR><Th><font size=2>0</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th></TR>
 <TR><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th></TR>
 <TR><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th></TR>
@@ -35,15 +35,15 @@
 <TR>
 <TH>A</TH>
 <TH>B</TH>
-<TH>RN</TH>
 <TH>G</TH>
+<TH>RN</TH>
 <TH>Q</TH>
 </TR>
 <TR><Th><font>RNCL2W11OF2X4</font></Th>
 <TD align=center>0.00130</TD>
 <TD align=center>0.00138</TD>
-<TD align=center>0.00076</TD>
 <TD align=center>0.00000</TD>
+<TD align=center>0.00076</TD>
 <TD align=center>0.05000</TD>
 </TR>
 </TABLE>
@@ -70,7 +70,7 @@
 <TH rowspan=2>When</TH>
 <TH colspan=3>Delay(ns)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
 <BR>
-<TR><TH rowspan=3>RNCL2W11OF2X4</TH>
+<TR><TH rowspan=4>RNCL2W11OF2X4</TH>
 <Th><font>A->Q (RR)</font></Th>
 <Th><font>B * RN</font></Th>
 <TD align=center>0.03352</TD>
@@ -83,6 +83,13 @@
 <TD align=center>0.03489</TD>
 <TD align=center>0.05185</TD>
 <TD align=center>0.11293</TD>
+</TR>
+<TR>
+<Th><font>G->Q (RR)</font></Th>
+<Th><font>-</font></Th>
+<TD align=center>0.03610</TD>
+<TD align=center>0.04499</TD>
+<TD align=center>0.07547</TD>
 </TR>
 <TR>
 <Th><font>RN->Q (RR)</font></Th>
@@ -100,7 +107,7 @@
 <TH rowspan=2>When</TH>
 <TH colspan=3>Delay(ns)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
 <BR>
-<TR><TH rowspan=5>RNCL2W11OF2X4</TH>
+<TR><TH rowspan=6>RNCL2W11OF2X4</TH>
 <Th><font>A->Q (FF)</font></Th>
 <Th><font>!B * RN</font></Th>
 <TD align=center>0.03162</TD>
@@ -113,6 +120,13 @@
 <TD align=center>0.03130</TD>
 <TD align=center>0.05321</TD>
 <TD align=center>0.12989</TD>
+</TR>
+<TR>
+<Th><font>G->Q (RF)</font></Th>
+<Th><font>-</font></Th>
+<TD align=center>0.04053</TD>
+<TD align=center>0.04820</TD>
+<TD align=center>0.07420</TD>
 </TR>
 <TR>
 <Th><font>RN->Q (FF)</font></Th>
@@ -140,6 +154,62 @@
 <!--NewPage-->
 <BR>
 <FONT SIZE=+2><B>Constraint Information</B></FONT>
+<BR>
+<BR>
+<FONT><B>Constraints(ns) for A rising :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ns)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=1>RNCL2W11OF2X4</TH>
+<Th><font>setup</font></Th>
+<Th><font>G (R)</font></Th>
+<TD align=center>-0.00254</TD>
+<TD align=center>0.00000</TD>
+<TD align=center>0.00850</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ns) for A falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ns)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=1>RNCL2W11OF2X4</TH>
+<Th><font>setup</font></Th>
+<Th><font>G (R)</font></Th>
+<TD align=center>-0.00887</TD>
+<TD align=center>0.00000</TD>
+<TD align=center>0.03573</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ns) for B rising :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ns)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=1>RNCL2W11OF2X4</TH>
+<Th><font>setup</font></Th>
+<Th><font>G (R)</font></Th>
+<TD align=center>-0.00116</TD>
+<TD align=center>0.00685</TD>
+<TD align=center>0.03952</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ns) for B falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ns)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=1>RNCL2W11OF2X4</TH>
+<Th><font>setup</font></Th>
+<Th><font>G (R)</font></Th>
+<TD align=center>-0.00920</TD>
+<TD align=center>0.00502</TD>
+<TD align=center>0.05795</TD>
+</TR>
+</TABLE>
 <BR>
 <BR>
 <FONT><B>Min Pulse Width (ns) for RN:</B></FONT>
