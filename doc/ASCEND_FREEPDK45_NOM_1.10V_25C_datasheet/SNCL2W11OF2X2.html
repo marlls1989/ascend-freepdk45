@@ -1,6 +1,6 @@
 <HTML><BODY TEXT="#000000"  LINK="#0000FF" VLINK="#0000FF" ALINK="#00FFFF"><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100%>
 <TR align=center><th align=left><H1><font size=+3>SNCL2W11OF2X2</font></H1></th>
-<TR align=center><th align=left></th><th align=right><h5><em><A>ASCEND_FREEPDK45_NOM_1.10V_25C Cell Library: Process , Voltage 1.10, Temp 25.00 </A></em></h5></th></TR>
+<TR align=center><th align=left></th><th align=right><h5><em><A>ASCEND_FREEPDK45_NOM_1.10V_25C Cell Library: Process PVT_1P1V_25C, Voltage 1.10, Temp 25.00 </A></em></h5></th></TR>
 </TABLE>
 <HR>
 <BR>
@@ -9,12 +9,12 @@
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4>
 <TR valign=middle><TH colspan=4><font size=3>INPUT</font></TH>
 <TH colspan=1><font size=3>OUTPUT</font></TH>
-<TR><Th>A</Th><Th>B</Th><Th>S</Th><Th>G</Th><Th>Q</Th></TR>
+<TR><Th>A</Th><Th>B</Th><Th>G</Th><Th>S</Th><Th>Q</Th></TR>
 <TR><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>IQ</font></Th></TR>
-<TR><Th><font size=2>0</font></Th><Th><font size=2>x</font></Th><Th><font size=2>0</font></Th><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th></TR>
-<TR><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th></TR>
-<TR><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th></TR>
-<TR><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th></TR>
+<TR><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th></TR>
+<TR><Th><font size=2>0</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th></TR>
+<TR><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th><Th><font size=2>1</font></Th><Th><font size=2>0</font></Th><Th><font size=2>0</font></Th></TR>
+<TR><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th><Th><font size=2>1</font></Th><Th><font size=2>x</font></Th><Th><font size=2>1</font></Th></TR>
 </TABLE>
 </TR></TABLE>
 <BR>
@@ -35,15 +35,15 @@
 <TR>
 <TH>A</TH>
 <TH>B</TH>
-<TH>S</TH>
 <TH>G</TH>
+<TH>S</TH>
 <TH>Q</TH>
 </TR>
 <TR><Th><font>SNCL2W11OF2X2</font></Th>
 <TD align=center>0.00140</TD>
 <TD align=center>0.00147</TD>
-<TD align=center>0.00083</TD>
 <TD align=center>0.00000</TD>
+<TD align=center>0.00083</TD>
 <TD align=center>0.05000</TD>
 </TR>
 </TABLE>
@@ -70,7 +70,7 @@
 <TH rowspan=2>When</TH>
 <TH colspan=3>Delay(ns)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
 <BR>
-<TR><TH rowspan=5>SNCL2W11OF2X2</TH>
+<TR><TH rowspan=6>SNCL2W11OF2X2</TH>
 <Th><font>A->Q (RR)</font></Th>
 <Th><font>B * !S</font></Th>
 <TD align=center>0.02710</TD>
@@ -83,6 +83,13 @@
 <TD align=center>0.02832</TD>
 <TD align=center>0.05520</TD>
 <TD align=center>0.15105</TD>
+</TR>
+<TR>
+<Th><font>G->Q (RR)</font></Th>
+<Th><font>-</font></Th>
+<TD align=center>0.03361</TD>
+<TD align=center>0.04755</TD>
+<TD align=center>0.10686</TD>
 </TR>
 <TR>
 <Th><font>S->Q (RR)</font></Th>
@@ -114,7 +121,7 @@
 <TH rowspan=2>When</TH>
 <TH colspan=3>Delay(ns)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
 <BR>
-<TR><TH rowspan=3>SNCL2W11OF2X2</TH>
+<TR><TH rowspan=4>SNCL2W11OF2X2</TH>
 <Th><font>A->Q (FF)</font></Th>
 <Th><font>!B * !S</font></Th>
 <TD align=center>0.02980</TD>
@@ -129,6 +136,13 @@
 <TD align=center>0.14183</TD>
 </TR>
 <TR>
+<Th><font>G->Q (RF)</font></Th>
+<Th><font>-</font></Th>
+<TD align=center>0.03434</TD>
+<TD align=center>0.04819</TD>
+<TD align=center>0.10090</TD>
+</TR>
+<TR>
 <Th><font>S->Q (FF)</font></Th>
 <Th><font>!A * !B</font></Th>
 <TD align=center>0.02413</TD>
@@ -140,6 +154,62 @@
 <!--NewPage-->
 <BR>
 <FONT SIZE=+2><B>Constraint Information</B></FONT>
+<BR>
+<BR>
+<FONT><B>Constraints(ns) for A rising :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ns)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=1>SNCL2W11OF2X2</TH>
+<Th><font>setup</font></Th>
+<Th><font>G (R)</font></Th>
+<TD align=center>-0.00622</TD>
+<TD align=center>0.00000</TD>
+<TD align=center>0.01692</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ns) for A falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ns)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=1>SNCL2W11OF2X2</TH>
+<Th><font>setup</font></Th>
+<Th><font>G (R)</font></Th>
+<TD align=center>-0.00445</TD>
+<TD align=center>0.00000</TD>
+<TD align=center>0.01993</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ns) for B rising :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ns)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=1>SNCL2W11OF2X2</TH>
+<Th><font>setup</font></Th>
+<Th><font>G (R)</font></Th>
+<TD align=center>-0.00500</TD>
+<TD align=center>0.00765</TD>
+<TD align=center>0.04743</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<FONT><B>Constraints(ns) for B falling :</B></FONT>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
+<TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Check</TH><TH rowspan=2>Ref Pin(trans)</TH><TH colspan=3>Reference Slew Rate(ns)</TH></TR><TR><TH> min </TH><TH> mid </TH><TH> max </TH></TR>
+<BR>
+<TR><TH rowspan=1>SNCL2W11OF2X2</TH>
+<Th><font>setup</font></Th>
+<Th><font>G (R)</font></Th>
+<TD align=center>-0.00458</TD>
+<TD align=center>0.00446</TD>
+<TD align=center>0.04276</TD>
+</TR>
+</TABLE>
 <BR>
 <BR>
 <FONT><B>Min Pulse Width (ns) for S:</B></FONT>
