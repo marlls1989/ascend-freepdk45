@@ -64,36 +64,31 @@
 <FONT SIZE=+2><B>Delay Information</B></FONT>
 <BR>
 <BR>
-<FONT><B>Delay(ns) to Q rising (conditional):</B></FONT>
+<FONT><B>Delay(ns) to Q rising :</B></FONT>
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
 <TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Arc(Dir)</TH>
-<TH rowspan=2>When</TH>
 <TH colspan=3>Delay(ns)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
 <BR>
 <TR><TH rowspan=4>RNCL2W11OF2X2</TH>
 <Th><font>A->Q (RR)</font></Th>
-<Th><font>B * RN</font></Th>
 <TD align=center>0.02923</TD>
 <TD align=center>0.04671</TD>
-<TD align=center>0.10835</TD>
+<TD align=center>0.10836</TD>
 </TR>
 <TR>
 <Th><font>B->Q (RR)</font></Th>
-<Th><font>A * RN</font></Th>
 <TD align=center>0.03050</TD>
-<TD align=center>0.05340</TD>
-<TD align=center>0.13849</TD>
+<TD align=center>0.05339</TD>
+<TD align=center>0.13848</TD>
 </TR>
 <TR>
 <Th><font>G->Q (RR)</font></Th>
-<Th><font>-</font></Th>
 <TD align=center>0.03174</TD>
 <TD align=center>0.04671</TD>
 <TD align=center>0.10640</TD>
 </TR>
 <TR>
 <Th><font>RN->Q (RR)</font></Th>
-<Th><font>A * B</font></Th>
 <TD align=center>0.02600</TD>
 <TD align=center>0.05535</TD>
 <TD align=center>0.16712</TD>
@@ -101,53 +96,34 @@
 </TABLE>
 <BR>
 <BR>
-<FONT><B>Delay(ns) to Q falling (conditional):</B></FONT>
+<FONT><B>Delay(ns) to Q falling :</B></FONT>
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH=100%>
 <TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Timing Arc(Dir)</TH>
-<TH rowspan=2>When</TH>
 <TH colspan=3>Delay(ns)</TH></TR><TR><TH>Min</TH><TH>Mid</TH><TH>Max</TH></TR>
 <BR>
-<TR><TH rowspan=6>RNCL2W11OF2X2</TH>
+<TR><TH rowspan=4>RNCL2W11OF2X2</TH>
 <Th><font>A->Q (FF)</font></Th>
-<Th><font>!B * RN</font></Th>
 <TD align=center>0.02767</TD>
-<TD align=center>0.04917</TD>
+<TD align=center>0.04915</TD>
 <TD align=center>0.13107</TD>
 </TR>
 <TR>
 <Th><font>B->Q (FF)</font></Th>
-<Th><font>!A * RN</font></Th>
 <TD align=center>0.02734</TD>
 <TD align=center>0.05385</TD>
 <TD align=center>0.15246</TD>
 </TR>
 <TR>
 <Th><font>G->Q (RF)</font></Th>
-<Th><font>-</font></Th>
-<TD align=center>0.03646</TD>
-<TD align=center>0.04917</TD>
+<TD align=center>0.03645</TD>
+<TD align=center>0.04915</TD>
 <TD align=center>0.10152</TD>
 </TR>
 <TR>
 <Th><font>RN->Q (FF)</font></Th>
-<Th><font>A * B</font></Th>
 <TD align=center>0.01439</TD>
 <TD align=center>0.03787</TD>
 <TD align=center>0.10997</TD>
-</TR>
-<TR>
-<Th><font>RN->Q (FF)</font></Th>
-<Th><font>A * !B</font></Th>
-<TD align=center>0.01534</TD>
-<TD align=center>0.03664</TD>
-<TD align=center>0.08347</TD>
-</TR>
-<TR>
-<Th><font>RN->Q (FF)</font></Th>
-<Th><font>!A * B</font></Th>
-<TD align=center>0.01445</TD>
-<TD align=center>0.03444</TD>
-<TD align=center>0.07838</TD>
 </TR>
 </TABLE>
 <BR>
@@ -163,7 +139,7 @@
 <TR><TH rowspan=1>RNCL2W11OF2X2</TH>
 <Th><font>setup</font></Th>
 <Th><font>G (R)</font></Th>
-<TD align=center>-0.00230</TD>
+<TD align=center>-0.00231</TD>
 <TD align=center>0.00000</TD>
 <TD align=center>0.00434</TD>
 </TR>
@@ -177,7 +153,7 @@
 <TR><TH rowspan=1>RNCL2W11OF2X2</TH>
 <Th><font>setup</font></Th>
 <Th><font>G (R)</font></Th>
-<TD align=center>-0.00860</TD>
+<TD align=center>-0.00858</TD>
 <TD align=center>0.00000</TD>
 <TD align=center>0.03211</TD>
 </TR>
@@ -205,9 +181,9 @@
 <TR><TH rowspan=1>RNCL2W11OF2X2</TH>
 <Th><font>setup</font></Th>
 <Th><font>G (R)</font></Th>
-<TD align=center>-0.00892</TD>
-<TD align=center>0.00468</TD>
-<TD align=center>0.05339</TD>
+<TD align=center>-0.00890</TD>
+<TD align=center>0.00470</TD>
+<TD align=center>0.05341</TD>
 </TR>
 </TABLE>
 <BR>
@@ -236,19 +212,19 @@
 <Th><font>A</font></Th>
 <Th><font>B * RN</font></Th>
 <TD align=center>0.00200</TD>
-<TD align=center>0.00226</TD>
-<TD align=center>0.00556</TD>
+<TD align=center>0.00227</TD>
+<TD align=center>0.00557</TD>
 </TR>
 <TR>
 <Th><font>B</font></Th>
 <Th><font>A * RN</font></Th>
-<TD align=center>0.00213</TD>
-<TD align=center>0.00235</TD>
+<TD align=center>0.00212</TD>
+<TD align=center>0.00236</TD>
 <TD align=center>0.00569</TD>
 </TR>
 <TR>
 <Th><font>RN</font></Th>
-<Th><font>A * B</font></Th>
+<Th><font>-</font></Th>
 <TD align=center>0.00220</TD>
 <TD align=center>0.00271</TD>
 <TD align=center>0.00766</TD>
@@ -261,40 +237,26 @@
 <TR valign=middle><TH rowspan=2>Cell Name</TH><TH rowspan=2>Input</TH>
 <TH rowspan=2>When</TH>
 <TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
-<TR><TH rowspan=5>RNCL2W11OF2X2</TH>
+<TR><TH rowspan=3>RNCL2W11OF2X2</TH>
 <Th><font>A</font></Th>
 <Th><font>!B * RN</font></Th>
-<TD align=center>0.00324</TD>
+<TD align=center>0.00323</TD>
 <TD align=center>0.00360</TD>
 <TD align=center>0.00743</TD>
 </TR>
 <TR>
 <Th><font>B</font></Th>
 <Th><font>!A * RN</font></Th>
-<TD align=center>0.00318</TD>
-<TD align=center>0.00364</TD>
+<TD align=center>0.00317</TD>
+<TD align=center>0.00365</TD>
 <TD align=center>0.00775</TD>
 </TR>
 <TR>
 <Th><font>RN</font></Th>
-<Th><font>A * B</font></Th>
+<Th><font>-</font></Th>
 <TD align=center>0.00192</TD>
 <TD align=center>0.00294</TD>
 <TD align=center>0.00858</TD>
-</TR>
-<TR>
-<Th><font>RN</font></Th>
-<Th><font>A * !B</font></Th>
-<TD align=center>0.00217</TD>
-<TD align=center>0.00307</TD>
-<TD align=center>0.00645</TD>
-</TR>
-<TR>
-<Th><font>RN</font></Th>
-<Th><font>!A * B</font></Th>
-<TD align=center>0.00193</TD>
-<TD align=center>0.00279</TD>
-<TD align=center>0.00604</TD>
 </TR>
 </TABLE>
 <BR>
@@ -306,27 +268,27 @@
 </TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
 <TR><TH rowspan=4>RNCL2W11OF2X2</TH>
 <Th><font>B * RN * Q</font></Th>
-<TD align=center>0.00553</TD>
-<TD align=center>0.00550</TD>
-<TD align=center>0.00550</TD>
+<TD align=center>-0.00030</TD>
+<TD align=center>-0.00033</TD>
+<TD align=center>-0.00034</TD>
 </TR>
 <TR>
 <Th><font>B * !RN * !Q</font></Th>
-<TD align=center>0.00623</TD>
-<TD align=center>0.00623</TD>
-<TD align=center>0.00623</TD>
+<TD align=center>-0.00036</TD>
+<TD align=center>-0.00036</TD>
+<TD align=center>-0.00037</TD>
 </TR>
 <TR>
 <Th><font>!B * RN * !Q</font></Th>
-<TD align=center>0.00663</TD>
-<TD align=center>0.00663</TD>
-<TD align=center>0.00663</TD>
+<TD align=center>-0.00037</TD>
+<TD align=center>-0.00037</TD>
+<TD align=center>-0.00037</TD>
 </TR>
 <TR>
 <Th><font>!B * !RN * !Q</font></Th>
-<TD align=center>0.00545</TD>
-<TD align=center>0.00545</TD>
-<TD align=center>0.00545</TD>
+<TD align=center>-0.00037</TD>
+<TD align=center>-0.00037</TD>
+<TD align=center>-0.00037</TD>
 </TR>
 </TABLE>
 <BR>
@@ -338,27 +300,27 @@
 </TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
 <TR><TH rowspan=4>RNCL2W11OF2X2</TH>
 <Th><font>B * RN * Q</font></Th>
-<TD align=center>0.00999</TD>
-<TD align=center>0.00998</TD>
-<TD align=center>0.00998</TD>
+<TD align=center>0.00050</TD>
+<TD align=center>0.00050</TD>
+<TD align=center>0.00049</TD>
 </TR>
 <TR>
 <Th><font>B * !RN * !Q</font></Th>
-<TD align=center>0.00631</TD>
-<TD align=center>0.00630</TD>
-<TD align=center>0.00630</TD>
+<TD align=center>0.00048</TD>
+<TD align=center>0.00047</TD>
+<TD align=center>0.00047</TD>
 </TR>
 <TR>
 <Th><font>!B * RN * !Q</font></Th>
-<TD align=center>0.00664</TD>
-<TD align=center>0.00663</TD>
-<TD align=center>0.00663</TD>
+<TD align=center>0.00049</TD>
+<TD align=center>0.00048</TD>
+<TD align=center>0.00047</TD>
 </TR>
 <TR>
 <Th><font>!B * !RN * !Q</font></Th>
-<TD align=center>0.00660</TD>
-<TD align=center>0.00659</TD>
-<TD align=center>0.00659</TD>
+<TD align=center>0.00047</TD>
+<TD align=center>0.00046</TD>
+<TD align=center>0.00046</TD>
 </TR>
 </TABLE>
 <BR>
@@ -370,27 +332,27 @@
 </TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
 <TR><TH rowspan=4>RNCL2W11OF2X2</TH>
 <Th><font>A * RN * Q</font></Th>
-<TD align=center>0.00562</TD>
-<TD align=center>0.00561</TD>
-<TD align=center>0.00561</TD>
+<TD align=center>-0.00018</TD>
+<TD align=center>-0.00019</TD>
+<TD align=center>-0.00020</TD>
 </TR>
 <TR>
 <Th><font>A * !RN * !Q</font></Th>
-<TD align=center>0.00623</TD>
-<TD align=center>0.00623</TD>
-<TD align=center>0.00623</TD>
+<TD align=center>-0.00036</TD>
+<TD align=center>-0.00036</TD>
+<TD align=center>-0.00037</TD>
 </TR>
 <TR>
 <Th><font>!A * RN * !Q</font></Th>
-<TD align=center>0.00668</TD>
-<TD align=center>0.00668</TD>
-<TD align=center>0.00667</TD>
+<TD align=center>-0.00038</TD>
+<TD align=center>-0.00038</TD>
+<TD align=center>-0.00038</TD>
 </TR>
 <TR>
 <Th><font>!A * !RN * !Q</font></Th>
-<TD align=center>0.00533</TD>
-<TD align=center>0.00533</TD>
-<TD align=center>0.00533</TD>
+<TD align=center>-0.00038</TD>
+<TD align=center>-0.00038</TD>
+<TD align=center>-0.00037</TD>
 </TR>
 </TABLE>
 <BR>
@@ -402,27 +364,27 @@
 </TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
 <TR><TH rowspan=4>RNCL2W11OF2X2</TH>
 <Th><font>A * RN * Q</font></Th>
-<TD align=center>0.00888</TD>
-<TD align=center>0.00888</TD>
-<TD align=center>0.00887</TD>
+<TD align=center>0.00035</TD>
+<TD align=center>0.00035</TD>
+<TD align=center>0.00034</TD>
 </TR>
 <TR>
 <Th><font>A * !RN * !Q</font></Th>
-<TD align=center>0.00633</TD>
-<TD align=center>0.00632</TD>
-<TD align=center>0.00632</TD>
+<TD align=center>0.00049</TD>
+<TD align=center>0.00047</TD>
+<TD align=center>0.00047</TD>
 </TR>
 <TR>
 <Th><font>!A * RN * !Q</font></Th>
-<TD align=center>0.00660</TD>
-<TD align=center>0.00659</TD>
-<TD align=center>0.00659</TD>
+<TD align=center>0.00051</TD>
+<TD align=center>0.00051</TD>
+<TD align=center>0.00050</TD>
 </TR>
 <TR>
 <Th><font>!A * !RN * !Q</font></Th>
-<TD align=center>0.00669</TD>
-<TD align=center>0.00670</TD>
-<TD align=center>0.00669</TD>
+<TD align=center>0.00048</TD>
+<TD align=center>0.00047</TD>
+<TD align=center>0.00047</TD>
 </TR>
 </TABLE>
 <BR>
@@ -434,21 +396,21 @@
 </TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
 <TR><TH rowspan=3>RNCL2W11OF2X2</TH>
 <Th><font>A * !B * !Q</font></Th>
-<TD align=center>0.00703</TD>
-<TD align=center>0.00702</TD>
-<TD align=center>0.00702</TD>
+<TD align=center>-0.00011</TD>
+<TD align=center>-0.00011</TD>
+<TD align=center>-0.00013</TD>
 </TR>
 <TR>
 <Th><font>!A * B * !Q</font></Th>
-<TD align=center>0.00723</TD>
-<TD align=center>0.00722</TD>
-<TD align=center>0.00722</TD>
+<TD align=center>-0.00010</TD>
+<TD align=center>-0.00010</TD>
+<TD align=center>-0.00013</TD>
 </TR>
 <TR>
 <Th><font>!A * !B * !Q</font></Th>
-<TD align=center>0.00614</TD>
-<TD align=center>0.00614</TD>
-<TD align=center>0.00614</TD>
+<TD align=center>-0.00018</TD>
+<TD align=center>-0.00018</TD>
+<TD align=center>-0.00019</TD>
 </TR>
 </TABLE>
 <BR>
@@ -460,21 +422,21 @@
 </TH><TH colspan=3>Power(pJ)</TH></TR><TR><TH>min</TH><TH>mid</TH><TH>max</TH></TR>
 <TR><TH rowspan=3>RNCL2W11OF2X2</TH>
 <Th><font>A * !B * !Q</font></Th>
-<TD align=center>0.00602</TD>
-<TD align=center>0.00602</TD>
-<TD align=center>0.00602</TD>
+<TD align=center>0.00029</TD>
+<TD align=center>0.00029</TD>
+<TD align=center>0.00028</TD>
 </TR>
 <TR>
 <Th><font>!A * B * !Q</font></Th>
-<TD align=center>0.00591</TD>
-<TD align=center>0.00591</TD>
-<TD align=center>0.00591</TD>
+<TD align=center>0.00029</TD>
+<TD align=center>0.00029</TD>
+<TD align=center>0.00028</TD>
 </TR>
 <TR>
 <Th><font>!A * !B * !Q</font></Th>
-<TD align=center>0.00626</TD>
-<TD align=center>0.00626</TD>
-<TD align=center>0.00626</TD>
+<TD align=center>0.00029</TD>
+<TD align=center>0.00029</TD>
+<TD align=center>0.00029</TD>
 </TR>
 </TABLE>
 <BR>
