@@ -1,4 +1,4 @@
-// Verilog for library ASCEND_FREEPDK45 created by Liberate dev on Fri May 22 18:00:21 -03 2020 for SDF version both
+// Verilog for library ASCEND_FREEPDK45 created by Liberate dev on Sat Aug 15 16:16:58 -03 2020 for SDF version both
 ///////////////////////////////////////////////////////////////////////////////
 //    ___     ____   ____   ______        _____
 //   / _ \   /  __\ /  __\ /  ___/_ __   /  _  \
@@ -63,18 +63,22 @@ input  A, M, P;
 			(negedge A => (Q+:1'b0)) = 0;
 		if (~M & ~P)
 			(negedge A => (Q+:1'b0)) = 0;
+		ifnone (negedge A => (Q+:1'b0)) = 0;
 		if (M & P)
 			(posedge A => (Q+:1'b1)) = 0;
 		if (~M & P)
 			(posedge A => (Q+:1'b1)) = 0;
+		ifnone (posedge A => (Q+:1'b1)) = 0;
 		if (~A & P)
 			(negedge M => (Q+:1'b0)) = 0;
 		if (~A & ~P)
 			(negedge M => (Q+:1'b0)) = 0;
+		ifnone (negedge M => (Q+:1'b0)) = 0;
 		if (A & M)
 			(posedge P => (Q+:1'b1)) = 0;
 		if (A & ~M)
 			(posedge P => (Q+:1'b1)) = 0;
+		ifnone (posedge P => (Q+:1'b1)) = 0;
 		$setuphold (posedge M &&& P, negedge A &&& P, 0, 0, notifier,,, delayed_M, delayed_A);
 		$setuphold (posedge M &&& ~P, negedge A &&& ~P, 0, 0, notifier,,, delayed_M, delayed_A);
 		$setuphold (posedge M, negedge A, 0, 0, notifier,,, delayed_M, delayed_A);
@@ -129,18 +133,22 @@ input  A, M, P;
 			(negedge A => (Q+:1'b0)) = 0;
 		if (~M & ~P)
 			(negedge A => (Q+:1'b0)) = 0;
+		ifnone (negedge A => (Q+:1'b0)) = 0;
 		if (M & P)
 			(posedge A => (Q+:1'b1)) = 0;
 		if (~M & P)
 			(posedge A => (Q+:1'b1)) = 0;
+		ifnone (posedge A => (Q+:1'b1)) = 0;
 		if (~A & P)
 			(negedge M => (Q+:1'b0)) = 0;
 		if (~A & ~P)
 			(negedge M => (Q+:1'b0)) = 0;
+		ifnone (negedge M => (Q+:1'b0)) = 0;
 		if (A & M)
 			(posedge P => (Q+:1'b1)) = 0;
 		if (A & ~M)
 			(posedge P => (Q+:1'b1)) = 0;
+		ifnone (posedge P => (Q+:1'b1)) = 0;
 		$setuphold (posedge M &&& P, negedge A &&& P, 0, 0, notifier,,, delayed_M, delayed_A);
 		$setuphold (posedge M &&& ~P, negedge A &&& ~P, 0, 0, notifier,,, delayed_M, delayed_A);
 		$setuphold (posedge M, negedge A, 0, 0, notifier,,, delayed_M, delayed_A);
@@ -195,18 +203,22 @@ input  A, M, P;
 			(negedge A => (Q+:1'b0)) = 0;
 		if (~M & ~P)
 			(negedge A => (Q+:1'b0)) = 0;
+		ifnone (negedge A => (Q+:1'b0)) = 0;
 		if (M & P)
 			(posedge A => (Q+:1'b1)) = 0;
 		if (~M & P)
 			(posedge A => (Q+:1'b1)) = 0;
+		ifnone (posedge A => (Q+:1'b1)) = 0;
 		if (~A & P)
 			(negedge M => (Q+:1'b0)) = 0;
 		if (~A & ~P)
 			(negedge M => (Q+:1'b0)) = 0;
+		ifnone (negedge M => (Q+:1'b0)) = 0;
 		if (A & M)
 			(posedge P => (Q+:1'b1)) = 0;
 		if (A & ~M)
 			(posedge P => (Q+:1'b1)) = 0;
+		ifnone (posedge P => (Q+:1'b1)) = 0;
 		$setuphold (posedge M &&& P, negedge A &&& P, 0, 0, notifier,,, delayed_M, delayed_A);
 		$setuphold (posedge M &&& ~P, negedge A &&& ~P, 0, 0, notifier,,, delayed_M, delayed_A);
 		$setuphold (posedge M, negedge A, 0, 0, notifier,,, delayed_M, delayed_A);
@@ -250,14 +262,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
-		if (~A & ~C & ~D)
-			(B => Q) = 0.01;
-		if (~A & ~B & ~D)
-			(C => Q) = 0.01;
-		if (~A & ~B & ~C)
-			(D => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -284,12 +292,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
-		if (~A & ~C)
-			(B => Q) = 0.01;
-		if (~A & ~B)
-			(C => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -315,10 +320,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(A => Q) = 0.01;
-		if (~A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -333,10 +336,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(A => Q) = 0.01;
-		if (~A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -351,10 +352,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(A => Q) = 0.01;
-		if (~A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -462,14 +461,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -484,14 +477,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -506,14 +493,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -541,20 +522,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		if (~B & ~C)
+			(posedge A => (Q-:1'b0)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -569,20 +545,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		if (~B & ~C)
+			(posedge A => (Q-:1'b0)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -597,20 +568,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		if (~B & ~C)
+			(posedge A => (Q-:1'b0)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -641,18 +607,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -667,18 +624,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -693,18 +641,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -733,22 +672,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & ~C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & ~B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -763,22 +695,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & ~C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & ~B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -793,22 +718,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & ~C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & ~B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -840,8 +758,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (B & ~C & D)
@@ -854,18 +771,11 @@ input  A, B, C, D;
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (~A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		if (~B & ~C & ~D)
+			(posedge A => (Q-:1'b0)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -880,8 +790,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (B & ~C & D)
@@ -894,18 +803,11 @@ input  A, B, C, D;
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (~A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		if (~B & ~C & ~D)
+			(posedge A => (Q-:1'b0)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -920,8 +822,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (B & ~C & D)
@@ -934,18 +835,11 @@ input  A, B, C, D;
 			(posedge A => (Q-:1'b0)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (~A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		if (~B & ~C & ~D)
+			(posedge A => (Q-:1'b0)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -982,22 +876,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1012,22 +894,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1042,22 +912,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1145,14 +1003,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(A => Q) = 0.01;
-		if (A & C & D)
-			(B => Q) = 0.01;
-		if (A & B & D)
-			(C => Q) = 0.01;
-		if (A & B & C)
-			(D => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1179,12 +1033,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(A => Q) = 0.01;
-		if (A & C)
-			(B => Q) = 0.01;
-		if (A & B)
-			(C => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1210,10 +1061,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(A => Q) = 0.01;
-		if (A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1228,10 +1077,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(A => Q) = 0.01;
-		if (A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1246,10 +1093,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(A => Q) = 0.01;
-		if (A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1302,14 +1147,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1324,14 +1163,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1346,14 +1179,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1381,20 +1208,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
-			(A => Q) = 0.01;
+			(negedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C)
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1409,20 +1231,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
-			(A => Q) = 0.01;
+			(negedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C)
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1437,20 +1254,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
-			(A => Q) = 0.01;
+			(negedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C)
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1481,18 +1293,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1507,18 +1310,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1533,18 +1327,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1606,22 +1391,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1636,22 +1409,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1666,22 +1427,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1712,8 +1461,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
@@ -1728,18 +1476,9 @@ input  A, B, C, D;
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & ~D)
 			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & C & D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & B & D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & B & C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1754,8 +1493,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
@@ -1770,18 +1508,9 @@ input  A, B, C, D;
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & ~D)
 			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & C & D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & B & D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & B & C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1796,8 +1525,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(posedge A => (Q-:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
@@ -1812,18 +1540,9 @@ input  A, B, C, D;
 			(negedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & ~D)
 			(negedge A => (Q+:1'b1)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q-:1'b0)) = 0.01;
-		if (~A & C & D)
-			(negedge B => (Q+:1'b1)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q-:1'b0)) = 0.01;
-		if (~A & B & D)
-			(negedge C => (Q+:1'b1)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q-:1'b0)) = 0.01;
-		if (~A & B & C)
-			(negedge D => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1891,6 +1610,123 @@ endspecify
 INCLPOA22OF4_Q u_INCLPOA22OF4_Q (Q, A, B, C, D);
 endmodule
 
+primitive MUT_X(X, A, Y);
+output X;
+input  A, Y;
+reg    X;
+table
+	0 ? : ? : 0;
+	1 0 : ? : 1;
+	? 1 : ? : 0;
+endtable
+endprimitive
+
+primitive MUT_Y(Y, B, X);
+output Y;
+input  B, X;
+reg    Y;
+table
+	0 ? : ? : 0;
+	1 0 : ? : 1;
+	? 1 : ? : 0;
+endtable
+endprimitive
+
+`celldefine
+module MUTX1(X, Y, A, B);
+output X, Y;
+input  A, B;
+reg X, Y;
+
+	// Section written by Liberate dev
+	specify
+		ifnone (A => X) = 0.01;
+		if (B)
+			(negedge A => (X+:1'b0)) = 0.01;
+		if (~B)
+			(negedge A => (X+:1'b0)) = 0.01;
+		ifnone (negedge B => (X+:1'b1)) = 0.01;
+		ifnone (negedge A => (Y+:1'b1)) = 0.01;
+		ifnone (B => Y) = 0.01;
+		if (A)
+			(negedge B => (Y+:1'b0)) = 0.01;
+		if (~A)
+			(negedge B => (Y+:1'b0)) = 0.01;
+	endspecify
+	// End Section written by Liberate dev
+
+  always @(A or B)
+    case ({A,B})
+      2'b00: begin
+        X <= 0;
+        Y <= 0;
+      end
+      2'b01: begin
+        X <= 0;
+        Y <= 1;
+      end
+      2'b10: begin
+        X <= 1;
+        Y <= 0;
+      end
+      2'b11: if (!X && !Y) begin
+        if($urandom%2)
+          X <= 1;
+        else
+          Y <= 1;
+      end
+    endcase
+
+endmodule
+`endcelldefine
+
+`celldefine
+module MUTX2(X, Y, A, B);
+output X, Y;
+input  A, B;
+reg X, Y;
+
+	// Section written by Liberate dev
+	specify
+		ifnone (A => X) = 0.01;
+		if (B)
+			(negedge A => (X+:1'b0)) = 0.01;
+		if (~B)
+			(negedge A => (X+:1'b0)) = 0.01;
+		ifnone (negedge B => (X+:1'b1)) = 0.01;
+		ifnone (negedge A => (Y+:1'b1)) = 0.01;
+		ifnone (B => Y) = 0.01;
+		if (A)
+			(negedge B => (Y+:1'b0)) = 0.01;
+		if (~A)
+			(negedge B => (Y+:1'b0)) = 0.01;
+	endspecify
+	// End Section written by Liberate dev
+
+  always @(A or B)
+    case ({A,B})
+      2'b00: begin
+        X <= 0;
+        Y <= 0;
+      end
+      2'b01: begin
+        X <= 0;
+        Y <= 1;
+      end
+      2'b10: begin
+        X <= 1;
+        Y <= 0;
+      end
+      2'b11: if (!X && !Y) begin
+        if($urandom%2)
+          X <= 1;
+        else
+          Y <= 1;
+      end
+    endcase
+endmodule
+`endcelldefine
+
 primitive NCL1W1111OF4_Q(Q, A, B, C, D);
 output Q;
 input  A, B, C, D;
@@ -1911,14 +1747,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
-		if (~A & ~C & ~D)
-			(B => Q) = 0.01;
-		if (~A & ~B & ~D)
-			(C => Q) = 0.01;
-		if (~A & ~B & ~C)
-			(D => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1933,14 +1765,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
-		if (~A & ~C & ~D)
-			(B => Q) = 0.01;
-		if (~A & ~B & ~D)
-			(C => Q) = 0.01;
-		if (~A & ~B & ~C)
-			(D => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1955,14 +1783,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
-		if (~A & ~C & ~D)
-			(B => Q) = 0.01;
-		if (~A & ~B & ~D)
-			(C => Q) = 0.01;
-		if (~A & ~B & ~C)
-			(D => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -1989,12 +1813,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
-		if (~A & ~C)
-			(B => Q) = 0.01;
-		if (~A & ~B)
-			(C => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2009,12 +1830,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
-		if (~A & ~C)
-			(B => Q) = 0.01;
-		if (~A & ~B)
-			(C => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2029,12 +1847,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
-		if (~A & ~C)
-			(B => Q) = 0.01;
-		if (~A & ~B)
-			(C => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2060,10 +1875,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(A => Q) = 0.01;
-		if (~A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2078,10 +1891,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(A => Q) = 0.01;
-		if (~A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2096,10 +1907,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(A => Q) = 0.01;
-		if (~A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2207,14 +2016,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2229,14 +2032,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2251,14 +2048,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2286,20 +2077,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (~A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (~A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		if (~B & ~C)
+			(posedge A => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2314,20 +2100,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (~A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (~A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		if (~B & ~C)
+			(posedge A => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2342,20 +2123,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (~A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (~A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		if (~B & ~C)
+			(posedge A => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2386,18 +2162,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2412,18 +2179,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2438,18 +2196,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2478,22 +2227,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & ~C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & ~B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2508,22 +2250,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & ~C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & ~B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2538,22 +2273,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & ~C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & ~B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2585,8 +2313,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
@@ -2599,18 +2326,11 @@ input  A, B, C, D;
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (~A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (~A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (~A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		if (~B & ~C & ~D)
+			(posedge A => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2625,8 +2345,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
@@ -2639,18 +2358,11 @@ input  A, B, C, D;
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (~A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (~A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (~A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		if (~B & ~C & ~D)
+			(posedge A => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2665,8 +2377,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(A => Q) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
@@ -2679,18 +2390,11 @@ input  A, B, C, D;
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (~A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (~A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (~A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		if (~B & ~C & ~D)
+			(posedge A => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2727,22 +2431,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2757,22 +2449,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2787,22 +2467,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -2836,32 +2504,28 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (A & C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (A & ~C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (A & ~C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & ~B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & ~B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & ~B & C)
 			(posedge D => (Q+:1'b1)) = 0.01;
 		if (~A & B & C)
@@ -2882,32 +2546,28 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (A & C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (A & ~C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (A & ~C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & ~B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & ~B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & ~B & C)
 			(posedge D => (Q+:1'b1)) = 0.01;
 		if (~A & B & C)
@@ -2928,32 +2588,28 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (B & ~C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (A & C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (A & ~C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (A & ~C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & ~B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & ~B & D)
 			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & ~B & C)
 			(posedge D => (Q+:1'b1)) = 0.01;
 		if (~A & B & C)
@@ -2991,32 +2647,28 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (~B & C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (~A & C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (~A & C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (~A & ~C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (A & ~B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & B & ~C)
 			(posedge D => (Q+:1'b1)) = 0.01;
 		if (A & ~B & ~C)
@@ -3037,32 +2689,28 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (~B & C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (~A & C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (~A & C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (~A & ~C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (A & ~B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & B & ~C)
 			(posedge D => (Q+:1'b1)) = 0.01;
 		if (A & ~B & ~C)
@@ -3083,32 +2731,28 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
+		ifnone (A => Q) = 0.01;
 		if (~B & C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & C & ~D)
 			(posedge A => (Q+:1'b1)) = 0.01;
 		if (~B & ~C & D)
 			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (~A & C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (~A & C & ~D)
 			(posedge B => (Q+:1'b1)) = 0.01;
 		if (~A & ~C & D)
 			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (A & ~B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
 		if (~A & B & ~D)
 			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & B & ~C)
 			(posedge D => (Q+:1'b1)) = 0.01;
 		if (A & ~B & ~C)
@@ -3142,14 +2786,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(A => Q) = 0.01;
-		if (A & C & D)
-			(B => Q) = 0.01;
-		if (A & B & D)
-			(C => Q) = 0.01;
-		if (A & B & C)
-			(D => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3164,14 +2804,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(A => Q) = 0.01;
-		if (A & C & D)
-			(B => Q) = 0.01;
-		if (A & B & D)
-			(C => Q) = 0.01;
-		if (A & B & C)
-			(D => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3186,14 +2822,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C & D)
-			(A => Q) = 0.01;
-		if (A & C & D)
-			(B => Q) = 0.01;
-		if (A & B & D)
-			(C => Q) = 0.01;
-		if (A & B & C)
-			(D => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3220,12 +2852,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(A => Q) = 0.01;
-		if (A & C)
-			(B => Q) = 0.01;
-		if (A & B)
-			(C => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3240,12 +2869,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(A => Q) = 0.01;
-		if (A & C)
-			(B => Q) = 0.01;
-		if (A & B)
-			(C => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3260,12 +2886,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (B & C)
-			(A => Q) = 0.01;
-		if (A & C)
-			(B => Q) = 0.01;
-		if (A & B)
-			(C => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3291,10 +2914,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(A => Q) = 0.01;
-		if (A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3309,10 +2930,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(A => Q) = 0.01;
-		if (A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3327,10 +2946,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (B)
-			(A => Q) = 0.01;
-		if (A)
-			(B => Q) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3383,14 +3000,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3405,14 +3016,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3427,14 +3032,8 @@ input  A, B;
 
 	// Section written by Liberate dev
 	specify
-		if (~B)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3462,20 +3061,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
-			(A => Q) = 0.01;
+			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & C)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3490,20 +3084,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
-			(A => Q) = 0.01;
+			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & C)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3518,20 +3107,15 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C)
-			(A => Q) = 0.01;
+			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & C)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3562,18 +3146,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3588,18 +3163,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3614,18 +3180,9 @@ input  A, B, C;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3687,22 +3244,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3717,22 +3262,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3747,22 +3280,10 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
-		if (~B & ~C & ~D)
-			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & ~C & ~D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & ~B & ~C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(A => Q) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3793,6 +3314,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & D)
@@ -3807,20 +3329,9 @@ input  A, B, C, D;
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & ~C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & C & D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B & D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & B & C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3835,6 +3346,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & D)
@@ -3849,20 +3361,9 @@ input  A, B, C, D;
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & ~C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & C & D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B & D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & B & C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3877,6 +3378,7 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & D)
@@ -3891,20 +3393,9 @@ input  A, B, C, D;
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & ~C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
-		if (~A & C & D)
-			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
-		if (~A & B & D)
-			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
-		if (~A & B & C)
-			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
+		(B => Q) = 0.01;
+		(C => Q) = 0.01;
+		(D => Q) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3938,38 +3429,34 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (~B & C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & ~C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (~A & C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (~A & C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (~A & ~C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (A & ~B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (A & ~B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -3984,38 +3471,34 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (~B & C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & ~C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (~A & C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (~A & C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (~A & ~C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (A & ~B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (A & ~B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -4030,38 +3513,34 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (~B & C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (~B & ~C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (~A & C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (~A & C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (~A & ~C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (A & ~B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & B & ~D)
 			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (A & ~B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & B & ~C)
 			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -4093,38 +3572,34 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (A & C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (A & ~C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (A & ~C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & ~B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & ~B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & ~B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & ~B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -4139,38 +3614,34 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (A & C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (A & ~C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (A & ~C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & ~B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & ~B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & ~B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & ~B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
@@ -4185,49 +3656,40 @@ input  A, B, C, D;
 
 	// Section written by Liberate dev
 	specify
+		ifnone (A => Q) = 0.01;
 		if (B & C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & D)
 			(negedge A => (Q+:1'b0)) = 0.01;
 		if (B & ~C & ~D)
 			(negedge A => (Q+:1'b0)) = 0.01;
-		if (B & C & D)
-			(posedge A => (Q+:1'b1)) = 0.01;
+		ifnone (B => Q) = 0.01;
 		if (A & C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (A & ~C & D)
 			(negedge B => (Q+:1'b0)) = 0.01;
 		if (A & ~C & ~D)
 			(negedge B => (Q+:1'b0)) = 0.01;
-		if (A & C & D)
-			(posedge B => (Q+:1'b1)) = 0.01;
+		ifnone (C => Q) = 0.01;
 		if (A & ~B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
 		if (~A & ~B & D)
 			(negedge C => (Q+:1'b0)) = 0.01;
-		if (A & B & D)
-			(posedge C => (Q+:1'b1)) = 0.01;
+		ifnone (D => Q) = 0.01;
 		if (A & ~B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
 		if (~A & ~B & C)
 			(negedge D => (Q+:1'b0)) = 0.01;
-		if (A & B & C)
-			(posedge D => (Q+:1'b1)) = 0.01;
 	endspecify
 	// End Section written by Liberate dev
 
 NCLPOA22OF4_Q u_NCLPOA22OF4_Q (Q, A, B, C, D);
 endmodule
 `endcelldefine
-
-module PULLDOWN_Q(Q);
-output Q;
-assign Q = 1'b0;
-endmodule
 
 `celldefine
 module PULLDOWN(Q);
@@ -4238,14 +3700,9 @@ output Q;
 	endspecify
 	// End Section written by Liberate dev
 
-PULLDOWN_Q u_PULLDOWN_Q (Q);
+assign Q = 1'b0;
 endmodule
 `endcelldefine
-
-module PULLUP_Q(Q);
-output Q;
-assign Q = 1'b1;
-endmodule
 
 `celldefine
 module PULLUP(Q);
@@ -4256,7 +3713,417 @@ output Q;
 	endspecify
 	// End Section written by Liberate dev
 
-PULLUP_Q u_PULLUP_Q (Q);
+assign Q = 1'b1;
+endmodule
+`endcelldefine
+
+primitive RACELEM1_Q(Q, A, M, P, RN);
+output Q;
+input  A, M, P, RN;
+reg    Q;
+table
+	0 0 ? ? : ? : 0;
+	0 1 ? 1 : ? : -;
+	1 ? 0 1 : ? : -;
+	1 ? 1 1 : ? : 1;
+	? 1 0 1 : ? : -;
+	? ? ? 0 : ? : 0;
+endtable
+endprimitive
+
+`celldefine
+module RACELEM1X1(Q, A, M, P, RN);
+output Q;
+input  A, M, P, RN;
+
+	// Section written by Liberate dev
+	wire delayed_A, delayed_M, delayed_P, delayed_RN;
+	reg notifier;
+
+	// Additional timing wires
+	wire A__bar, adacond0, adacond1;
+	wire adacond2, adacond3, adacond4;
+	wire adacond5, adacond6, adacond7;
+	wire adacond8, adacond9, adacond10;
+	wire adacond11, adacond12, adacond13;
+	wire adacond14, adacond15, adacond16;
+	wire M__bar, P__bar;
+
+
+	// Additional timing gates
+	and (adacond5, M, P, RN);
+	not (P__bar, P);
+	not (M__bar, M);
+	and (adacond4, M__bar, P__bar, RN);
+	and (adacond0, P, RN);
+	and (adacond1, P__bar, RN);
+	and (adacond2, M, RN);
+	and (adacond3, M__bar, RN);
+	not (A__bar, A);
+	and (adacond6, A__bar, P, RN);
+	and (adacond7, A__bar, P__bar, RN);
+	and (adacond8, A, M, RN);
+	and (adacond9, A, M__bar, RN);
+	and (adacond10, M, P);
+	and (adacond11, A, M);
+	and (adacond12, A, M__bar);
+	and (adacond13, A, M, P__bar);
+	and (adacond14, A, M__bar, P__bar);
+	and (adacond15, A__bar, M, P);
+	and (adacond16, A__bar, M, P__bar);
+
+	specify
+		if (~M & P & RN)
+			(negedge A => (Q+:1'b0)) = 0;
+		if (~M & ~P & RN)
+			(negedge A => (Q+:1'b0)) = 0;
+		ifnone (negedge A => (Q+:1'b0)) = 0;
+		if (M & P & RN)
+			(posedge A => (Q+:1'b1)) = 0;
+		if (~M & P & RN)
+			(posedge A => (Q+:1'b1)) = 0;
+		ifnone (posedge A => (Q+:1'b1)) = 0;
+		if (~A & P & RN)
+			(negedge M => (Q+:1'b0)) = 0;
+		if (~A & ~P & RN)
+			(negedge M => (Q+:1'b0)) = 0;
+		ifnone (negedge M => (Q+:1'b0)) = 0;
+		if (A & M & RN)
+			(posedge P => (Q+:1'b1)) = 0;
+		if (A & ~M & RN)
+			(posedge P => (Q+:1'b1)) = 0;
+		ifnone (posedge P => (Q+:1'b1)) = 0;
+		if (A & M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & ~M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & ~M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (~A & M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (~A & M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		if (A & M & P)
+			(posedge RN => (Q+:1'b1)) = 0;
+		if (A & ~M & P)
+			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
+		$setuphold (posedge M &&& adacond0, negedge A &&& adacond0, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (posedge M &&& adacond1, negedge A &&& adacond1, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (posedge M, negedge A, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (negedge P &&& adacond2, posedge A &&& adacond2, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (negedge P &&& adacond3, posedge A &&& adacond3, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (negedge P, posedge A, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (posedge A &&& adacond1, negedge M &&& adacond1, 0, 0, notifier,,, delayed_A, delayed_M);
+		$setuphold (posedge A, negedge M, 0, 0, notifier,,, delayed_A, delayed_M);
+		$setuphold (negedge A &&& adacond2, posedge P &&& adacond2, 0, 0, notifier,,, delayed_A, delayed_P);
+		$setuphold (negedge A, posedge P, 0, 0, notifier,,, delayed_A, delayed_P);
+		$setuphold (negedge A &&& adacond10, posedge RN &&& adacond10, 0, 0, notifier,,, delayed_A, delayed_RN);
+		$setuphold (negedge A, posedge RN, 0, 0, notifier,,, delayed_A, delayed_RN);
+		$setuphold (negedge P &&& adacond11, posedge RN &&& adacond11, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$setuphold (negedge P &&& adacond12, posedge RN &&& adacond12, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$setuphold (negedge P, posedge RN, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$width (posedge A &&& adacond5, 0, 0, notifier);
+		$width (negedge A &&& adacond4, 0, 0, notifier);
+		$width (negedge M &&& adacond6, 0, 0, notifier);
+		$width (negedge M &&& adacond7, 0, 0, notifier);
+		$width (posedge P &&& adacond8, 0, 0, notifier);
+		$width (posedge P &&& adacond9, 0, 0, notifier);
+		$width (negedge RN &&& adacond13, 0, 0, notifier);
+		$width (negedge RN &&& adacond14, 0, 0, notifier);
+		$width (negedge RN &&& adacond15, 0, 0, notifier);
+		$width (negedge RN &&& adacond16, 0, 0, notifier);
+	endspecify
+	// End Section written by Liberate dev
+
+RACELEM1_Q u_RACELEM1_Q (Q, A, M, P, RN);
+endmodule
+`endcelldefine
+
+`celldefine
+module RACELEM1X2(Q, A, M, P, RN);
+output Q;
+input  A, M, P, RN;
+
+	// Section written by Liberate dev
+	wire delayed_A, delayed_M, delayed_P, delayed_RN;
+	reg notifier;
+
+	// Additional timing wires
+	wire A__bar, adacond0, adacond1;
+	wire adacond2, adacond3, adacond4;
+	wire adacond5, adacond6, adacond7;
+	wire adacond8, adacond9, adacond10;
+	wire adacond11, adacond12, adacond13;
+	wire adacond14, adacond15, adacond16;
+	wire M__bar, P__bar;
+
+
+	// Additional timing gates
+	and (adacond5, M, P, RN);
+	not (P__bar, P);
+	not (M__bar, M);
+	and (adacond4, M__bar, P__bar, RN);
+	and (adacond0, P, RN);
+	and (adacond1, P__bar, RN);
+	and (adacond2, M, RN);
+	and (adacond3, M__bar, RN);
+	not (A__bar, A);
+	and (adacond6, A__bar, P, RN);
+	and (adacond7, A__bar, P__bar, RN);
+	and (adacond8, A, M, RN);
+	and (adacond9, A, M__bar, RN);
+	and (adacond10, M, P);
+	and (adacond11, A, M);
+	and (adacond12, A, M__bar);
+	and (adacond13, A, M, P__bar);
+	and (adacond14, A, M__bar, P__bar);
+	and (adacond15, A__bar, M, P);
+	and (adacond16, A__bar, M, P__bar);
+
+	specify
+		if (~M & P & RN)
+			(negedge A => (Q+:1'b0)) = 0;
+		if (~M & ~P & RN)
+			(negedge A => (Q+:1'b0)) = 0;
+		ifnone (negedge A => (Q+:1'b0)) = 0;
+		if (M & P & RN)
+			(posedge A => (Q+:1'b1)) = 0;
+		if (~M & P & RN)
+			(posedge A => (Q+:1'b1)) = 0;
+		ifnone (posedge A => (Q+:1'b1)) = 0;
+		if (~A & P & RN)
+			(negedge M => (Q+:1'b0)) = 0;
+		if (~A & ~P & RN)
+			(negedge M => (Q+:1'b0)) = 0;
+		ifnone (negedge M => (Q+:1'b0)) = 0;
+		if (A & M & RN)
+			(posedge P => (Q+:1'b1)) = 0;
+		if (A & ~M & RN)
+			(posedge P => (Q+:1'b1)) = 0;
+		ifnone (posedge P => (Q+:1'b1)) = 0;
+		if (A & M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & ~M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & ~M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (~A & M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (~A & M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		if (A & M & P)
+			(posedge RN => (Q+:1'b1)) = 0;
+		if (A & ~M & P)
+			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
+		$setuphold (posedge M &&& adacond0, negedge A &&& adacond0, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (posedge M &&& adacond1, negedge A &&& adacond1, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (posedge M, negedge A, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (negedge P &&& adacond2, posedge A &&& adacond2, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (negedge P &&& adacond3, posedge A &&& adacond3, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (negedge P, posedge A, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (posedge A &&& adacond1, negedge M &&& adacond1, 0, 0, notifier,,, delayed_A, delayed_M);
+		$setuphold (posedge A, negedge M, 0, 0, notifier,,, delayed_A, delayed_M);
+		$setuphold (negedge A &&& adacond2, posedge P &&& adacond2, 0, 0, notifier,,, delayed_A, delayed_P);
+		$setuphold (negedge A, posedge P, 0, 0, notifier,,, delayed_A, delayed_P);
+		$setuphold (negedge A &&& adacond10, posedge RN &&& adacond10, 0, 0, notifier,,, delayed_A, delayed_RN);
+		$setuphold (negedge A, posedge RN, 0, 0, notifier,,, delayed_A, delayed_RN);
+		$setuphold (negedge P &&& adacond11, posedge RN &&& adacond11, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$setuphold (negedge P &&& adacond12, posedge RN &&& adacond12, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$setuphold (negedge P, posedge RN, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$width (posedge A &&& adacond5, 0, 0, notifier);
+		$width (negedge A &&& adacond4, 0, 0, notifier);
+		$width (negedge M &&& adacond6, 0, 0, notifier);
+		$width (negedge M &&& adacond7, 0, 0, notifier);
+		$width (posedge P &&& adacond8, 0, 0, notifier);
+		$width (posedge P &&& adacond9, 0, 0, notifier);
+		$width (negedge RN &&& adacond13, 0, 0, notifier);
+		$width (negedge RN &&& adacond14, 0, 0, notifier);
+		$width (negedge RN &&& adacond15, 0, 0, notifier);
+		$width (negedge RN &&& adacond16, 0, 0, notifier);
+	endspecify
+	// End Section written by Liberate dev
+
+RACELEM1_Q u_RACELEM1_Q (Q, A, M, P, RN);
+endmodule
+`endcelldefine
+
+`celldefine
+module RACELEM1X4(Q, A, M, P, RN);
+output Q;
+input  A, M, P, RN;
+
+	// Section written by Liberate dev
+	wire delayed_A, delayed_M, delayed_P, delayed_RN;
+	reg notifier;
+
+	// Additional timing wires
+	wire A__bar, adacond0, adacond1;
+	wire adacond2, adacond3, adacond4;
+	wire adacond5, adacond6, adacond7;
+	wire adacond8, adacond9, adacond10;
+	wire adacond11, adacond12, adacond13;
+	wire adacond14, adacond15, adacond16;
+	wire M__bar, P__bar;
+
+
+	// Additional timing gates
+	and (adacond5, M, P, RN);
+	not (P__bar, P);
+	not (M__bar, M);
+	and (adacond4, M__bar, P__bar, RN);
+	and (adacond0, P, RN);
+	and (adacond1, P__bar, RN);
+	and (adacond2, M, RN);
+	and (adacond3, M__bar, RN);
+	not (A__bar, A);
+	and (adacond6, A__bar, P, RN);
+	and (adacond7, A__bar, P__bar, RN);
+	and (adacond8, A, M, RN);
+	and (adacond9, A, M__bar, RN);
+	and (adacond10, M, P);
+	and (adacond11, A, M);
+	and (adacond12, A, M__bar);
+	and (adacond13, A, M, P__bar);
+	and (adacond14, A, M__bar, P__bar);
+	and (adacond15, A__bar, M, P);
+	and (adacond16, A__bar, M, P__bar);
+
+	specify
+		if (~M & P & RN)
+			(negedge A => (Q+:1'b0)) = 0;
+		if (~M & ~P & RN)
+			(negedge A => (Q+:1'b0)) = 0;
+		ifnone (negedge A => (Q+:1'b0)) = 0;
+		if (M & P & RN)
+			(posedge A => (Q+:1'b1)) = 0;
+		if (~M & P & RN)
+			(posedge A => (Q+:1'b1)) = 0;
+		ifnone (posedge A => (Q+:1'b1)) = 0;
+		if (~A & P & RN)
+			(negedge M => (Q+:1'b0)) = 0;
+		if (~A & ~P & RN)
+			(negedge M => (Q+:1'b0)) = 0;
+		ifnone (negedge M => (Q+:1'b0)) = 0;
+		if (A & M & RN)
+			(posedge P => (Q+:1'b1)) = 0;
+		if (A & ~M & RN)
+			(posedge P => (Q+:1'b1)) = 0;
+		ifnone (posedge P => (Q+:1'b1)) = 0;
+		if (A & M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & ~M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (A & ~M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (~A & M & P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		if (~A & M & ~P)
+			(negedge RN => (Q+:1'b0)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		if (A & M & P)
+			(posedge RN => (Q+:1'b1)) = 0;
+		if (A & ~M & P)
+			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
+		$setuphold (posedge M &&& adacond0, negedge A &&& adacond0, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (posedge M &&& adacond1, negedge A &&& adacond1, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (posedge M, negedge A, 0, 0, notifier,,, delayed_M, delayed_A);
+		$setuphold (negedge P &&& adacond2, posedge A &&& adacond2, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (negedge P &&& adacond3, posedge A &&& adacond3, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (negedge P, posedge A, 0, 0, notifier,,, delayed_P, delayed_A);
+		$setuphold (posedge A &&& adacond1, negedge M &&& adacond1, 0, 0, notifier,,, delayed_A, delayed_M);
+		$setuphold (posedge A, negedge M, 0, 0, notifier,,, delayed_A, delayed_M);
+		$setuphold (negedge A &&& adacond2, posedge P &&& adacond2, 0, 0, notifier,,, delayed_A, delayed_P);
+		$setuphold (negedge A, posedge P, 0, 0, notifier,,, delayed_A, delayed_P);
+		$setuphold (negedge A &&& adacond10, posedge RN &&& adacond10, 0, 0, notifier,,, delayed_A, delayed_RN);
+		$setuphold (negedge A, posedge RN, 0, 0, notifier,,, delayed_A, delayed_RN);
+		$setuphold (negedge P &&& adacond11, posedge RN &&& adacond11, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$setuphold (negedge P &&& adacond12, posedge RN &&& adacond12, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$setuphold (negedge P, posedge RN, 0, 0, notifier,,, delayed_P, delayed_RN);
+		$width (posedge A &&& adacond5, 0, 0, notifier);
+		$width (negedge A &&& adacond4, 0, 0, notifier);
+		$width (negedge M &&& adacond6, 0, 0, notifier);
+		$width (negedge M &&& adacond7, 0, 0, notifier);
+		$width (posedge P &&& adacond8, 0, 0, notifier);
+		$width (posedge P &&& adacond9, 0, 0, notifier);
+		$width (negedge RN &&& adacond13, 0, 0, notifier);
+		$width (negedge RN &&& adacond14, 0, 0, notifier);
+		$width (negedge RN &&& adacond15, 0, 0, notifier);
+		$width (negedge RN &&& adacond16, 0, 0, notifier);
+	endspecify
+	// End Section written by Liberate dev
+
+RACELEM1_Q u_RACELEM1_Q (Q, A, M, P, RN);
+endmodule
+`endcelldefine
+
+`celldefine
+module RMUTX1(X, Y, A, B, R);
+output X, Y;
+input  A, B, R;
+reg X, Y;
+
+	// Section written by Liberate dev
+	specify
+		ifnone (A => X) = 0.01;
+		if (B & ~R)
+			(negedge A => (X+:1'b0)) = 0.01;
+		if (~B & ~R)
+			(negedge A => (X+:1'b0)) = 0.01;
+		ifnone (negedge B => (X+:1'b1)) = 0.01;
+		ifnone (R => X) = 0.01;
+		if (A & B)
+			(posedge R => (X-:1'b0)) = 0.01;
+		if (A & ~B)
+			(posedge R => (X-:1'b0)) = 0.01;
+		ifnone (negedge A => (Y+:1'b1)) = 0.01;
+		ifnone (B => Y) = 0.01;
+		if (A & ~R)
+			(negedge B => (Y+:1'b0)) = 0.01;
+		if (~A & ~R)
+			(negedge B => (Y+:1'b0)) = 0.01;
+		ifnone (R => Y) = 0.01;
+		if (A & B)
+			(posedge R => (Y-:1'b0)) = 0.01;
+		if (~A & B)
+			(posedge R => (Y-:1'b0)) = 0.01;
+	endspecify
+	// End Section written by Liberate dev
+
+  always @(A or B or R)
+    if (R) begin
+      X <= 0;
+      Y <= 0;
+    end else case ({A,B})
+      2'b00: begin
+        X <= 0;
+        Y <= 0;
+      end
+      2'b01: begin
+        X <= 0;
+        Y <= 1;
+      end
+      2'b10: begin
+        X <= 1;
+        Y <= 0;
+      end
+      2'b11: if (!X && !Y) begin
+        if($urandom%2)
+          X <= 1;
+        else
+          Y <= 1;
+      end
+    endcase
 endmodule
 `endcelldefine
 
@@ -4294,14 +4161,8 @@ input  A, B, G, RN;
 	and (adacond1, A__bar, B);
 
 	specify
-		if (~B & RN)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -4309,8 +4170,8 @@ input  A, B, G, RN;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & B)
 			(negedge RN => (Q+:1'b0)) = 0;
-		if (A & B)
-			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4345,14 +4206,8 @@ input  A, B, G, RN;
 	and (adacond1, A__bar, B);
 
 	specify
-		if (~B & RN)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -4360,8 +4215,8 @@ input  A, B, G, RN;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & B)
 			(negedge RN => (Q+:1'b0)) = 0;
-		if (A & B)
-			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4396,14 +4251,8 @@ input  A, B, G, RN;
 	and (adacond1, A__bar, B);
 
 	specify
-		if (~B & RN)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -4411,8 +4260,8 @@ input  A, B, G, RN;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & B)
 			(negedge RN => (Q+:1'b0)) = 0;
-		if (A & B)
-			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4467,14 +4316,8 @@ input  A, B, G, RN, S;
 	and (adacond5, A__bar, B, RN);
 
 	specify
-		if (~B & RN & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B & S)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -4490,6 +4333,7 @@ input  A, B, G, RN, S;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & ~B & S)
 			(negedge RN => (Q+:1'b0)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
 		if (A & B & S)
 			(posedge RN => (Q+:1'b1)) = 0;
 		if (A & B & ~S)
@@ -4500,14 +4344,15 @@ input  A, B, G, RN, S;
 			(posedge RN => (Q+:1'b1)) = 0;
 		if (~A & ~B & S)
 			(posedge RN => (Q+:1'b1)) = 0;
-		if (~A & ~B & RN)
-			(negedge S => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
+		(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4553,14 +4398,8 @@ input  A, B, G, RN, S;
 	and (adacond5, A__bar, B, RN);
 
 	specify
-		if (~B & RN & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B & S)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -4576,6 +4415,7 @@ input  A, B, G, RN, S;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & ~B & S)
 			(negedge RN => (Q+:1'b0)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
 		if (A & B & S)
 			(posedge RN => (Q+:1'b1)) = 0;
 		if (A & B & ~S)
@@ -4586,14 +4426,15 @@ input  A, B, G, RN, S;
 			(posedge RN => (Q+:1'b1)) = 0;
 		if (~A & ~B & S)
 			(posedge RN => (Q+:1'b1)) = 0;
-		if (~A & ~B & RN)
-			(negedge S => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
+		(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4639,14 +4480,8 @@ input  A, B, G, RN, S;
 	and (adacond5, A__bar, B, RN);
 
 	specify
-		if (~B & RN & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B & S)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -4662,6 +4497,7 @@ input  A, B, G, RN, S;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & ~B & S)
 			(negedge RN => (Q+:1'b0)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
 		if (A & B & S)
 			(posedge RN => (Q+:1'b1)) = 0;
 		if (A & B & ~S)
@@ -4672,14 +4508,15 @@ input  A, B, G, RN, S;
 			(posedge RN => (Q+:1'b1)) = 0;
 		if (~A & ~B & S)
 			(posedge RN => (Q+:1'b1)) = 0;
-		if (~A & ~B & RN)
-			(negedge S => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
+		(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B & RN)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4732,23 +4569,17 @@ input  A, B, G, S;
 	and (adacond1, A__bar, B);
 
 	specify
-		if (~B & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
-		if (~A & ~B)
-			(negedge S => (Q+:1'b0)) = 0;
+		(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & B)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4783,23 +4614,17 @@ input  A, B, G, S;
 	and (adacond1, A__bar, B);
 
 	specify
-		if (~B & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
-		if (~A & ~B)
-			(negedge S => (Q+:1'b0)) = 0;
+		(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & B)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4834,23 +4659,17 @@ input  A, B, G, S;
 	and (adacond1, A__bar, B);
 
 	specify
-		if (~B & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
-		if (~A & ~B)
-			(negedge S => (Q+:1'b0)) = 0;
+		(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & B)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4905,14 +4724,8 @@ input  A, B, G, RN, S;
 	and (adacond5, A__bar, B, RN);
 
 	specify
-		if (~B & RN & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B & ~S)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -4920,8 +4733,8 @@ input  A, B, G, RN, S;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & B & ~S)
 			(negedge RN => (Q+:1'b0)) = 0;
-		if (A & B & ~S)
-			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
 		if (A & B & ~RN)
 			(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B & ~RN)
@@ -4932,6 +4745,7 @@ input  A, B, G, RN, S;
 			(negedge S => (Q+:1'b0)) = 0;
 		if (~A & ~B & ~RN)
 			(negedge S => (Q+:1'b0)) = 0;
+		ifnone (negedge S => (Q+:1'b0)) = 0;
 		if (A & B & ~RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (A & ~B & RN)
@@ -4946,6 +4760,7 @@ input  A, B, G, RN, S;
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B & ~RN)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -4991,14 +4806,8 @@ input  A, B, G, RN, S;
 	and (adacond5, A__bar, B, RN);
 
 	specify
-		if (~B & RN & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B & ~S)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -5006,8 +4815,8 @@ input  A, B, G, RN, S;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & B & ~S)
 			(negedge RN => (Q+:1'b0)) = 0;
-		if (A & B & ~S)
-			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
 		if (A & B & ~RN)
 			(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B & ~RN)
@@ -5018,6 +4827,7 @@ input  A, B, G, RN, S;
 			(negedge S => (Q+:1'b0)) = 0;
 		if (~A & ~B & ~RN)
 			(negedge S => (Q+:1'b0)) = 0;
+		ifnone (negedge S => (Q+:1'b0)) = 0;
 		if (A & B & ~RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (A & ~B & RN)
@@ -5032,6 +4842,7 @@ input  A, B, G, RN, S;
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B & ~RN)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -5077,14 +4888,8 @@ input  A, B, G, RN, S;
 	and (adacond5, A__bar, B, RN);
 
 	specify
-		if (~B & RN & ~S)
-			(negedge A => (Q+:1'b0)) = 0;
-		if (B & RN & ~S)
-			(posedge A => (Q+:1'b1)) = 0;
-		if (~A & RN & ~S)
-			(negedge B => (Q+:1'b0)) = 0;
-		if (A & RN & ~S)
-			(posedge B => (Q+:1'b1)) = 0;
+		(A => Q) = 0;
+		(B => Q) = 0;
 		(posedge G => (Q+:((A && B)))) = 0;
 		if (A & B & ~S)
 			(negedge RN => (Q+:1'b0)) = 0;
@@ -5092,8 +4897,8 @@ input  A, B, G, RN, S;
 			(negedge RN => (Q+:1'b0)) = 0;
 		if (~A & B & ~S)
 			(negedge RN => (Q+:1'b0)) = 0;
-		if (A & B & ~S)
-			(posedge RN => (Q+:1'b1)) = 0;
+		ifnone (negedge RN => (Q+:1'b0)) = 0;
+		ifnone (posedge RN => (Q+:1'b1)) = 0;
 		if (A & B & ~RN)
 			(negedge S => (Q+:1'b0)) = 0;
 		if (A & ~B & ~RN)
@@ -5104,6 +4909,7 @@ input  A, B, G, RN, S;
 			(negedge S => (Q+:1'b0)) = 0;
 		if (~A & ~B & ~RN)
 			(negedge S => (Q+:1'b0)) = 0;
+		ifnone (negedge S => (Q+:1'b0)) = 0;
 		if (A & B & ~RN)
 			(posedge S => (Q+:1'b1)) = 0;
 		if (A & ~B & RN)
@@ -5118,6 +4924,7 @@ input  A, B, G, RN, S;
 			(posedge S => (Q+:1'b1)) = 0;
 		if (~A & ~B & ~RN)
 			(posedge S => (Q+:1'b1)) = 0;
+		ifnone (posedge S => (Q+:1'b1)) = 0;
 		$setuphold (posedge G, posedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, negedge A, 0, 0, notifier,,, delayed_G, delayed_A);
 		$setuphold (posedge G, posedge B, 0, 0, notifier,,, delayed_G, delayed_B);
@@ -5133,6 +4940,74 @@ input  A, B, G, RN, S;
 	// End Section written by Liberate dev
 
 SRNCL2W11OF2_Q u_SRNCL2W11OF2_Q (Q, A, B, G, RN, S);
+endmodule
+`endcelldefine
+
+primitive XNOR2_Q(Q, A, B);
+output Q;
+input  A, B;
+reg    Q;
+table
+	0 0 : ? : 1;
+	0 1 : ? : 0;
+	1 0 : ? : 0;
+	1 1 : ? : 1;
+endtable
+endprimitive
+
+`celldefine
+module XNOR2X1(Q, A, B);
+output Q;
+input  A, B;
+
+	// Section written by Liberate dev
+	specify
+		if (B)
+			(A => Q) = 0.01;
+		if (~B)
+			(A => Q) = 0.01;
+		if (A)
+			(B => Q) = 0.01;
+		if (~A)
+			(B => Q) = 0.01;
+	endspecify
+	// End Section written by Liberate dev
+
+XNOR2_Q u_XNOR2_Q (Q, A, B);
+endmodule
+`endcelldefine
+
+primitive XOR2_Q(Q, A, B);
+output Q;
+input  A, B;
+reg    Q;
+table
+	0 0 : ? : 0;
+	0 1 : ? : 1;
+	1 0 : ? : 1;
+	1 1 : ? : 0;
+endtable
+endprimitive
+
+`celldefine
+module XOR2X1(Q, A, B);
+output Q;
+input  A, B;
+
+	// Section written by Liberate dev
+	specify
+		if (~B)
+			(A => Q) = 0.01;
+		if (B)
+			(A => Q) = 0.01;
+		if (~A)
+			(B => Q) = 0.01;
+		if (A)
+			(B => Q) = 0.01;
+	endspecify
+	// End Section written by Liberate dev
+
+XOR2_Q u_XOR2_Q (Q, A, B);
 endmodule
 `endcelldefine
 
