@@ -48,7 +48,9 @@ The ./lib folder furnishes the cell characterization data in a machine readable 
 
 The ./netlist folder contains the cell transistor schematics as Spice descriptions, including transistor sizing data. 
 
-The ./oa folder contains layout information in the open access format. Finally, the ./verilog folder contains the behavioral cell descriptions.
+The ./oa folder contains layout information in the open access format. 
+
+Finally, the ./verilog folder contains the behavioral cell descriptions.
 
 The library ASCEnD-freePDK45 comes with characterization data for three corners: NOM (Nominal 1.10V, 25C), SS (Slow-Slow 0.95V, 125C) and FF (Fast-Fast 1.25V, 0C). Separate .lib and .html files are accordingly available for each of the corners and about every cell, where applicable.
 
