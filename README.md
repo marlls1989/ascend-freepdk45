@@ -8,16 +8,17 @@ A free standard cell library for SDDS-NCL circuits
 //    Matheus Trevisan Moreira <br>
 //    Ney Laert Vilar Calazans <br>
 // Contact: ney.calazans@pucrs.br, marcos.sartori@acad.pucrs.br or gaph@googlegroups.com <br>
-//
-// Last revision - September 6, 2021
-//
-// Last revision comments: A set of new cells is now available, including asymmetric C-elements
-//  in several flavors, mutexes for implemening circuits with choices, and some cells used  
-//  for unconventional implementations (XOR and XNOR gates). The previous version of the library
-//  contained a few errors that have been corrected, including referencing cells which did no exist
-//  and cell drives not available in all views. We hope no errors remain in this revision.
-//  Please contact us in the above e-mail(s) if you feel that something is still wrong.
-//
+//<br>
+// Last revision - September 6, 2021<br>
+//<br>
+// Last revision comments: A set of new cells is now available, including<br>
+//  asymmetric C-elements in several flavors, mutexes for implemening<br>
+//  circuits with choices, and some cells used for unconventional implementations<br>
+//  (XOR and XNOR gates). The previous version of the library contained a few<br>
+//  errors that have been corrected, including referencing cells which did no exist<br>
+//  and cell drives not available in all views. We hope no errors remain in this revision.<br>
+//  Please contact us in the above e-mail(s) if you feel that something is still wrong.<br>
+//<br>
 
 This is a distribution for the ASCEnD-freePDK45 library, developed over the North Carolina State University (NCSU) open source predictive Process Design Kit (PDK) FreePDK 45nm (bulk CMOS). The library supports the design of asynchronous circuits. ASCEnD stands for "Asynchronous Standard Cells for 'n' Designs". The asynchronous design templates supported by the library are from the quasi-delay insensitive (QDI) class, all based on the Null Convention Logic (NCL) paradigm. On top of this paradigm, the library developers propose, besides conventional NCL gates, an additional set of gates with behavior dual to NCL, the NCL+ (or NCLP) gates [8]. The library contains NCL gates as well as NCL+ gates and inverted versions of both these gate types (INCL and INCLP).
 
@@ -27,7 +28,7 @@ The ASCEnD-freePDK45 library contains a total of 134 cells: 34 NCL gates, 28 NCL
 
 Among the 134 cells, there are exactly 55 distinct cell types: 12 NCL cell types, 10 NCLP cell types, 9 INCL cell types and 7 INCLP cell types. The remaining 17 cell types comprise 5 asymmetrical C-element types (1 with one common input, 2 with reset control and 1 or 2 common inputs and 2 with set control and 1 or 2 common inputs), 4 types of C-elements with set and/or reset control input(s), the 4 layout support cell types, 2 mutex cell types, the XOR and XNOR cell types.
 
-This release of ASCEnD-freePDK45 is distributed in seven folders:
+This release of ASCEnD-freePDK45 is distributed in seven folders:<br>
 .<br>
 |-- doc<br>
 |-- gds<br>
