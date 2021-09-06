@@ -38,9 +38,19 @@ This release of ASCEnD-freePDK45 is distributed in seven folders:<br>
 |-- oa<br>
 |-- verilog<br>
 
-The folder ./doc contains the datasheet for every cell in the library, in html format (Note that in the current library release the area field of the cells is not valid, all of these fields are zeroed. Providing this information in the cell datasheet is future work). The ./gds folder contains all cell layouts. The ./lef folder provides the cell abstract views (pin locations and metal layers blocks). The ./lib folder furnishes the cell characterization data in a machine readable format (.lib). The ./netlist folder contains the cell transistor schematics as Spice descriptions, including transistor sizing data. The ./oa folder contains layout information in the open access format. Finally, the ./verilog folder contains the behavioral cell descriptions.
+The folder ./doc contains the datasheets for every cell in the library, in html format, for every chracterization corner (see more below). Note that in the current library release the area field of the cells is not valid, all of these fields are zeroed. Providing this information in the cell datasheet is future work. Also in the ./doc folder there are 5 documentational text files: inverter_cells.txt, lef_list.txt, lib_list.txt, ncl_cells.txt and nclp_cells.txt. These files are not used at all for synthesis or layout generation. 
 
-The library ASCEnD-freePDK45 comes with characterization data for three corners: NOM (Nominal 1.10V, 25C), SS (Slow-Slow 0.95V, 125C) and FF (Fast-Fast 1.25V, 0C). Separate .lib and .html files are accordingly available for each of the corners.
+The ./gds folder contains all cell layouts. 
+
+The ./lef folder provides the cell abstract views (pin locations and metal layers blocks). 
+
+The ./lib folder furnishes the cell characterization data in a machine readable format (.lib). 
+
+The ./netlist folder contains the cell transistor schematics as Spice descriptions, including transistor sizing data. 
+
+The ./oa folder contains layout information in the open access format. Finally, the ./verilog folder contains the behavioral cell descriptions.
+
+The library ASCEnD-freePDK45 comes with characterization data for three corners: NOM (Nominal 1.10V, 25C), SS (Slow-Slow 0.95V, 125C) and FF (Fast-Fast 1.25V, 0C). Separate .lib and .html files are accordingly available for each of the corners and about every cell, where applicable.
 
 ATTENTION: The ASCEnD-freePDK45 is originally an internal development of the GAPH research group to support our SDDS-NCL logic template [7], derived from NCL but essentially distinct from the latter. As such, we employ the concept of virtual functions [4,5] that enable using conventional synthesis tools to generate and optimize NCL circuits (see e.g. our SDDS-NCL page at https://corfu.pucrs.br/tikiwiki/tiki-index.php?page=SDDS-NCL). Besides, the design of sequential SDDS-NCL circuits requires the use of special characterization procedures and models [3,2,1]. As a consequence, pure NCL design with our cells, although possible, may require some re-characterization of the library. Please contact us to find out how to conduct this process. Another consequence is that some data from our library may have to be overlooked during pure NCL design, such as the dummy clock pin G, present in the datasheet of cells used to build registers [3,2]. These pins do not physically exist, but are used during circuit modeling and synthesis.
 
