@@ -7,7 +7,7 @@ A free standard cell library for SDDS-NCL circuits
 //    Marcos Luiggi Lemos Sartori <br>
 //    Matheus Trevisan Moreira <br>
 //    Ney Laert Vilar Calazans <br>
-// Contact: ney.calazans@pucrs.br, marcos.sartori@acad.pucrs.br or gaph@googlegroups.com <br>
+// Contact: nlvcalazans@gmail.com, marcos.sartori@acad.pucrs.br or gaph@googlegroups.com <br>
 //<br>
 // Last revision - September 6, 2021<br>
 //<br>
